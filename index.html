@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soso Zone - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <div class="animated-bg"></div>
+    </div>
+    
+    <div class="container">
+        <div class="login-container">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-gamepad"></i>
+                    <h1>Soso Zone</h1>
+                </div>
+                <p class="tagline">Entre na Arena dos Campeões</p>
+            </div>
+
+            <div class="form-container">
+                <!-- Formulário de Login -->
+                <div class="form-wrapper" id="loginForm">
+                    <h2>Entrar</h2>
+                    <form id="loginFormElement">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="loginUsername" placeholder="Nome de usuário" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="loginPassword" placeholder="Senha" required>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-play"></i>
+                            Entrar na Arena
+                        </button>
+                    </form>
+                    <div class="form-footer">
+                        <p>Não tem uma conta? 
+                            <span class="switch-form" onclick="switchToRegister()">Cadastre-se aqui</span>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formulário de Cadastro -->
+                <div class="form-wrapper hidden" id="registerForm">
+                    <h2>Criar Conta</h2>
+                    <form id="registerFormElement">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="registerUsername" placeholder="Nome de usuário" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="registerEmail" placeholder="E-mail" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="registerPassword" placeholder="Senha" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" placeholder="Confirmar senha" required>
+                        </div>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Criar Conta
+                        </button>
+                    </form>
+                    <div class="form-footer">
+                        <p>Já tem uma conta? 
+                            <span class="switch-form" onclick="switchToLogin()">Faça login aqui</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elementos decorativos -->
+        <div class="floating-elements">
+            <div class="floating-icon" style="top: 10%; left: 10%;"><i class="fas fa-trophy"></i></div>
+            <div class="floating-icon" style="top: 20%; right: 15%;"><i class="fas fa-crown"></i></div>
+            <div class="floating-icon" style="bottom: 20%; left: 15%;"><i class="fas fa-medal"></i></div>
+            <div class="floating-icon" style="bottom: 30%; right: 10%;"><i class="fas fa-star"></i></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soso Zone - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <div class="animated-bg"></div>
+    </div>
+    
+    <div class="admin-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <h1>Soso Zone</h1>
+                    <span class="admin-badge">ADMIN</span>
+                </div>
+            </div>
+            <div class="user-info">
+                <span class="welcome-text">Bem-vindo, <span id="adminName">Admin</span></span>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sair
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="admin-nav">
+            <button class="nav-btn active" onclick="showSection('dashboard')">
+                <i class="fas fa-tachometer-alt"></i>
+                Dashboard
+            </button>
+            <button class="nav-btn" onclick="showSection('valorant')">
+                <i class="fas fa-crosshairs"></i>
+                Valorant
+            </button>
+            <button class="nav-btn" onclick="showSection('lol')">
+                <i class="fas fa-shield-alt"></i>
+                League of Legends
+            </button>
+            <button class="nav-btn" onclick="showSection('results')">
+                <i class="fas fa-trophy"></i>
+                Resultados
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="admin-section active">
+                <div class="section-header">
+                    <h2><i class="fas fa-tachometer-alt"></i> Dashboard</h2>
+                    <p>Visão geral do sistema</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon valorant">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="valorantPlayers">0</h3>
+                            <p>Players Valorant</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon lol">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="lolPlayers">0</h3>
+                            <p>Players LoL</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon votes valorant">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="valorantVotes">0</h3>
+                            <p>Votos Valorant</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon votes lol">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="lolVotes">0</h3>
+                            <p>Votos LoL</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon votes maps">
+                            <i class="fas fa-map"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="mapVotes">0</h3>
+                            <p>Votos Mapas</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon users">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="totalUsers">0</h3>
+                            <p>Total de Usuários</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dashboard-content">
+                    <div class="status-cards">
+                        <div class="status-card">
+                            <h3><i class="fas fa-crosshairs"></i> Status Valorant</h3>
+                            <div class="status-info">
+                                <span class="status-badge" id="valorantStatus">Configurando</span>
+                                <p id="valorantInfo">0/10 players cadastrados</p>
+                            </div>
+                        </div>
+                        
+                        <div class="status-card">
+                            <h3><i class="fas fa-shield-alt"></i> Status LoL</h3>
+                            <div class="status-info">
+                                <span class="status-badge" id="lolStatus">Configurando</span>
+                                <p id="lolInfo">0/10 players cadastrados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Valorant Section -->
+            <section id="valorant-section" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-crosshairs"></i> Valorant</h2>
+                    <p>Gerenciar players e votação do Valorant</p>
+                </div>
+                
+                <div class="game-management">
+                    <div class="players-section">
+                        <div class="section-title">
+                            <h3>Players Cadastrados (<span id="valorantPlayerCount">0</span>/10)</h3>
+                            <div class="actions">
+                                <button class="btn-primary" onclick="showAddPlayerModal('valorant')" id="addValorantBtn">
+                                    <i class="fas fa-plus"></i>
+                                    Adicionar Player
+                                </button>
+                                <button class="btn-success" onclick="startVoting('valorant')" id="startValorantVoting" disabled>
+                                    <i class="fas fa-play"></i>
+                                    Iniciar Votação
+                                </button>
+                                <button class="btn-danger" onclick="endVoting('valorant')" id="endValorantVoting" disabled>
+                                    <i class="fas fa-stop"></i>
+                                    Encerrar Votação
+                                </button>
+                                <button class="btn-warning" onclick="resetVoting('valorant')" id="resetValorantVoting">
+                                    <i class="fas fa-redo"></i>
+                                    Reiniciar Votação
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="players-grid" id="valorantPlayersGrid">
+                            <!-- Players serão inseridos aqui dinamicamente -->
+                        </div>
+                    </div>
+                    
+                    <!-- Maps Section -->
+                    <div class="maps-section">
+                        <div class="section-title">
+                            <h3>Votação de Mapas</h3>
+                            <div class="actions">
+                                <button class="btn-primary" onclick="startMapVoting()" id="startMapVotingBtn" disabled>
+                                    <i class="fas fa-map"></i>
+                                    Iniciar Votação de Mapas
+                                </button>
+                                <button class="btn-danger" onclick="endMapVoting()" id="endMapVotingBtn" disabled>
+                                    <i class="fas fa-stop"></i>
+                                    Encerrar Votação de Mapas
+                                </button>
+                                <button class="btn-warning" onclick="resetMapVoting()" id="resetMapVotingBtn">
+                                    <i class="fas fa-redo"></i>
+                                    Reiniciar Votação de Mapas
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="maps-status">
+                            <div class="status-info">
+                                <span class="status-badge" id="mapVotingStatus">Aguardando</span>
+                                <p id="mapVotingInfo">Configure os players primeiro</p>
+                            </div>
+                        </div>
+                        
+                        <div class="maps-results" id="mapsResults">
+                            <!-- Resultados da votação de mapas -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LoL Section -->
+            <section id="lol-section" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-shield-alt"></i> League of Legends</h2>
+                    <p>Gerenciar players e votação do LoL</p>
+                </div>
+                
+                <div class="game-management">
+                    <div class="players-section">
+                        <div class="section-title">
+                            <h3>Players Cadastrados (<span id="lolPlayerCount">0</span>/10)</h3>
+                            <div class="actions">
+                                <button class="btn-primary" onclick="showAddPlayerModal('lol')" id="addLolBtn">
+                                    <i class="fas fa-plus"></i>
+                                    Adicionar Player
+                                </button>
+                                <button class="btn-success" onclick="startVoting('lol')" id="startLolVoting" disabled>
+                                    <i class="fas fa-play"></i>
+                                    Iniciar Votação
+                                </button>
+                                <button class="btn-danger" onclick="endVoting('lol')" id="endLolVoting" disabled>
+                                    <i class="fas fa-stop"></i>
+                                    Encerrar Votação
+                                </button>
+                                <button class="btn-warning" onclick="resetVoting('lol')" id="resetLolVoting">
+                                    <i class="fas fa-redo"></i>
+                                    Reiniciar Votação
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="players-grid" id="lolPlayersGrid">
+                            <!-- Players serão inseridos aqui dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-trophy"></i> Resultados</h2>
+                    <p>Times divididos e estatísticas</p>
+                </div>
+                
+                <div class="results-content">
+                    <div class="game-results">
+                        <div class="game-result-card">
+                            <h3><i class="fas fa-crosshairs"></i> Valorant</h3>
+                            <div id="valorantResults">
+                                <p class="no-results">Nenhuma votação concluída ainda</p>
+                            </div>
+                        </div>
+                        
+                        <div class="game-result-card">
+                            <h3><i class="fas fa-shield-alt"></i> League of Legends</h3>
+                            <div id="lolResults">
+                                <p class="no-results">Nenhuma votação concluída ainda</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Modal para adicionar player -->
+    <div class="modal" id="addPlayerModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-plus"></i> Adicionar Player</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="addPlayerForm">
+                    <div class="input-group">
+                        <label for="playerName">Nome do Player:</label>
+                        <input type="text" id="playerName" placeholder="Digite o nome do player" required>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" onclick="closeModal()">Cancelar</button>
+                        <button type="submit" class="btn-primary">
+                            <i class="fas fa-plus"></i>
+                            Adicionar
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>

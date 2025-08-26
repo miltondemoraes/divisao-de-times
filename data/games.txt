@@ -1,0 +1,160 @@
+{
+  "valorant": {
+    "players": [
+      {
+        "id": 1756217627271,
+        "name": "CNB Mutuca (Milton)",
+        "addedAt": "2025-08-26T14:13:47.271Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217638458,
+        "name": "Trombeiro (Bida)",
+        "addedAt": "2025-08-26T14:13:58.458Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217643724,
+        "name": "Xota (Jota)",
+        "addedAt": "2025-08-26T14:14:03.724Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217654063,
+        "name": "Drk Final Boss (Marx)",
+        "addedAt": "2025-08-26T14:14:14.063Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217669535,
+        "name": "Clauderlan (Quer voltar com a Ex)",
+        "addedAt": "2025-08-26T14:14:29.535Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217690651,
+        "name": "Mulherofobico (Bemmer)",
+        "addedAt": "2025-08-26T14:14:50.651Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217731605,
+        "name": "Agressor, o irmão da Preciosa (Rapha)",
+        "addedAt": "2025-08-26T14:15:31.605Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217743664,
+        "name": "Xota Primo (Primo do Jota)",
+        "addedAt": "2025-08-26T14:15:43.664Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217776062,
+        "name": "Viado Kpop (Autoexplicativo)",
+        "addedAt": "2025-08-26T14:16:16.062Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217834738,
+        "name": "Blaze09 (Outro viado chamado Guilherme)",
+        "addedAt": "2025-08-26T14:17:14.738Z",
+        "votes": {}
+      }
+    ],
+    "votes": {},
+    "voting_active": false,
+    "teams": [],
+    "maps": {
+      "available": [
+        "Bind",
+        "Haven",
+        "Split",
+        "Ascent",
+        "Icebox",
+        "Breeze",
+        "Fracture",
+        "Pearl",
+        "Lotus",
+        "Sunset",
+        "Abyss",
+        "Corrode"
+      ],
+      "votes": {},
+      "votingActive": false,
+      "selected": []
+    },
+    "votingOpen": false,
+    "mapVotingOpen": false,
+    "votingActive": false
+  },
+  "lol": {
+    "players": [
+      {
+        "id": 1756217845342,
+        "name": "CNB Mutuca (Milton)",
+        "addedAt": "2025-08-26T14:17:25.342Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217850730,
+        "name": "Clauderlan (Quer voltar com a Ex)",
+        "addedAt": "2025-08-26T14:17:30.730Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217853722,
+        "name": "Blaze09 (Outro viado chamado Guilherme)",
+        "addedAt": "2025-08-26T14:17:33.722Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217857734,
+        "name": "Mulherofobico (Bemmer)",
+        "addedAt": "2025-08-26T14:17:37.734Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217860563,
+        "name": "Drk Final Boss (Marx)",
+        "addedAt": "2025-08-26T14:17:40.563Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217865903,
+        "name": "Xota Primo (Primo do Jota)",
+        "addedAt": "2025-08-26T14:17:45.903Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217869584,
+        "name": "Viado Kpop (Autoexplicativo)",
+        "addedAt": "2025-08-26T14:17:49.584Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217880777,
+        "name": "Agressor, o irmão da Preciosa (Rapha)",
+        "addedAt": "2025-08-26T14:18:00.777Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217898328,
+        "name": "Xota (Jota)",
+        "addedAt": "2025-08-26T14:18:18.328Z",
+        "votes": {}
+      },
+      {
+        "id": 1756217912306,
+        "name": "Trombeiro (Bida)",
+        "addedAt": "2025-08-26T14:18:32.306Z",
+        "votes": {}
+      }
+    ],
+    "votes": {},
+    "voting_active": false,
+    "teams": [],
+    "votingActive": false,
+    "votingOpen": false
+  }
+}

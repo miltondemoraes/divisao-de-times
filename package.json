@@ -1,0 +1,17 @@
+{
+  "name": "soso-zone-login",
+  "version": "1.0.0",
+  "description": "Sistema de login Soso Zone com salvamento em arquivo TXT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5"
+  },
+  "keywords": ["login", "esports", "nodejs", "txt-database"],
+  "author": "Soso Zone",
+  "license": "MIT"
+}

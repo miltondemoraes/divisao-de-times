@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soso Zone - Votação</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="voting.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="background">
+        <div class="animated-bg"></div>
+    </div>
+    
+    <div class="voting-container">
+        <!-- Header -->
+        <header class="voting-header">
+            <div class="logo-section">
+                <div class="logo">
+                    <i class="fas fa-vote-yea"></i>
+                    <h1>Soso Zone</h1>
+                    <span class="voter-badge">VOTANTE</span>
+                </div>
+            </div>
+            <div class="user-info">
+                <span class="welcome-text">Bem-vindo, <span id="voterName">Votante</span></span>
+                <button class="btn-logout" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Sair
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="voting-nav">
+            <button class="nav-btn active" onclick="showGame('valorant')">
+                <i class="fas fa-crosshairs"></i>
+                Valorant
+                <span class="voting-status" id="valorantStatus">●</span>
+            </button>
+            <button class="nav-btn" onclick="showMapVoting()">
+                <i class="fas fa-map"></i>
+                Mapas Valorant
+                <span class="voting-status" id="mapVotingStatus">●</span>
+            </button>
+            <button class="nav-btn" onclick="showGame('lol')">
+                <i class="fas fa-shield-alt"></i>
+                League of Legends
+                <span class="voting-status" id="lolStatus">●</span>
+            </button>
+            <button class="nav-btn" onclick="showResults()">
+                <i class="fas fa-trophy"></i>
+                Resultados
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="voting-main">
+            <!-- Game Selection Message -->
+            <div class="game-selection" id="gameSelection">
+                <div class="selection-card">
+                    <i class="fas fa-gamepad"></i>
+                    <h2>Selecione um Jogo</h2>
+                    <p>Escolha Valorant ou League of Legends para começar a votação</p>
+                </div>
+            </div>
+
+            <!-- Valorant Voting -->
+            <section id="valorant-voting" class="voting-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-crosshairs"></i> Votação - Valorant</h2>
+                    <p id="valorantDescription">Vote de 1 a 10 para cada player</p>
+                </div>
+                
+                <div class="voting-content" id="valorantContent">
+                    <!-- Players serão inseridos aqui -->
+                </div>
+                
+                <div class="voting-actions">
+                    <button class="btn-primary" onclick="submitVotes('valorant')" id="submitValorantBtn" disabled>
+                        <i class="fas fa-check"></i>
+                        Enviar Votos
+                    </button>
+                </div>
+            </section>
+
+            <!-- LoL Voting -->
+            <section id="lol-voting" class="voting-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-shield-alt"></i> Votação - League of Legends</h2>
+                    <p id="lolDescription">Vote de 1 a 10 para cada player</p>
+                </div>
+                
+                <div class="voting-content" id="lolContent">
+                    <!-- Players serão inseridos aqui -->
+                </div>
+                
+                <div class="voting-actions">
+                    <button class="btn-primary" onclick="submitVotes('lol')" id="submitLolBtn" disabled>
+                        <i class="fas fa-check"></i>
+                        Enviar Votos
+                    </button>
+                </div>
+            </section>
+
+            <!-- Map Voting Section -->
+            <section id="map-voting" class="voting-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-map"></i> Votação - Mapas do Valorant</h2>
+                    <p id="mapDescription">Selecione seus 5 mapas favoritos</p>
+                </div>
+                
+                <div class="voting-content" id="mapContent">
+                    <!-- Mapas serão inseridos aqui -->
+                </div>
+                
+                <div class="voting-actions">
+                    <button class="btn-primary" onclick="submitMapVotes()" id="submitMapBtn" disabled>
+                        <i class="fas fa-map-marked-alt"></i>
+                        Enviar Votos dos Mapas
+                    </button>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="voting-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-trophy"></i> Resultados</h2>
+                    <p>Times divididos e mapas selecionados</p>
+                </div>
+                
+                <div class="voting-content">
+                    <div id="resultsContent">
+                        <p class="status-message">Carregando resultados...</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Message -->
+            <div class="results-message" id="resultsMessage" style="display: none;">
+                <div class="message-card">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Votação Encerrada!</h2>
+                    <p>Os times foram calculados e estão disponíveis para visualização.</p>
+                    <button class="btn-primary" onclick="viewResults()">
+                        <i class="fas fa-eye"></i>
+                        Ver Resultados
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div class="modal" id="confirmModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-question-circle"></i> Confirmar Votação</h3>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja enviar seus votos? Esta ação não pode ser desfeita.</p>
+                <div class="vote-summary" id="voteSummary"></div>
+                <div class="modal-actions">
+                    <button class="btn-secondary" onclick="closeConfirmModal()">Cancelar</button>
+                    <button class="btn-primary" onclick="confirmSubmitVotes()">
+                        <i class="fas fa-check"></i>
+                        Confirmar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Modal -->
+    <div class="modal" id="resultsModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3><i class="fas fa-trophy"></i> Resultados dos Times</h3>
+                <button class="modal-close" onclick="closeResultsModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="results-content" id="resultsContent">
+                    <!-- Resultados serão inseridos aqui -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="voting.js"></script>
+</body>
+</html>

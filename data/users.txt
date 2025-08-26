@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "username": "mutucapin",
+    "email": "admin@sososzone.com",
+    "password": "jms270804",
+    "role": "admin",
+    "createdAt": "2025-08-26T13:29:49.054Z"
+  },
+  {
+    "id": 2,
+    "username": "player1",
+    "email": "player1@sososzone.com",
+    "password": "123456",
+    "role": "votante",
+    "createdAt": "2025-08-26T13:29:49.054Z"
+  },
+  {
+    "id": 1756217295344,
+    "username": "mutucapingusso",
+    "email": "tanzinho.neto@gmail.com",
+    "password": "jms270804",
+    "role": "votante",
+    "createdAt": "2025-08-26T14:08:15.344Z"
+  }
+]
