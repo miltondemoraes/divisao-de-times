@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Configuração</title>
+</head>
+<body>
+    <h1>Teste de Configuração da API</h1>
+    <div id="results"></div>
+    
+    <script src="config.js"></script>
+    <script>
+        // Testar a configuração da API
+        const resultsDiv = document.getElementById('results');
+        
+        console.log('Testando configuração...');
+        console.log('Host atual:', window.location.hostname);
+        console.log('API Base URL:', API_CONFIG.getBaseURL());
+        
+        resultsDiv.innerHTML = `
+            <p><strong>Host atual:</strong> ${window.location.hostname}</p>
+            <p><strong>API Base URL:</strong> ${API_CONFIG.getBaseURL()}</p>
+            <p><strong>Tipo de ambiente:</strong> ${window.location.hostname === 'localhost' ? 'Desenvolvimento' : 'Produção'}</p>
+        `;
+        
+        // Testar conectividade com a API
+        async function testAPI() {
+            try {
+                const response = await fetch(`${API_CONFIG.getBaseURL()}/api/games`);
+                const status = response.ok ? 'Conectado ✅' : 'Erro na resposta ❌';
+                resultsDiv.innerHTML += `<p><strong>Status da API:</strong> ${status}</p>`;
+            } catch (error) {
+                resultsDiv.innerHTML += `<p><strong>Status da API:</strong> Falha na conexão ❌</p>`;
+                resultsDiv.innerHTML += `<p><strong>Erro:</strong> ${error.message}</p>`;
+            }
+        }
+        
+        testAPI();
+    </script>
+</body>
+</html>

@@ -1,4 +1,7 @@
 // Admin Dashboard JavaScript
+// Configuração da API vinda do config.js
+const API_BASE_URL = window.API_CONFIG ? API_CONFIG.getBaseURL() : 'http://localhost:3000';
+
 let currentGame = '';
 let games = { valorant: [], lol: [] };
 let stats = { valorant: 0, lol: 0, votes: 0, users: 0 };
@@ -41,7 +44,7 @@ async function loadDashboardData() {
 // Carregar estatísticas
 async function loadStats() {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             
@@ -74,7 +77,7 @@ async function loadStats() {
         
         // Carregar total de usuários
         try {
-            const usersResponse = await fetch('http://localhost:3000/api/users');
+            const usersResponse = await fetch(`${API_BASE_URL}/api/users`);
             if (usersResponse.ok) {
                 const users = await usersResponse.json();
                 stats.users = users.length;
@@ -95,7 +98,7 @@ async function loadStats() {
 // Carregar players dos jogos
 async function loadGamePlayers() {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             games = data;
@@ -269,7 +272,7 @@ document.getElementById('addPlayerForm').addEventListener('submit', async functi
     }
     
     try {
-        const response = await fetch(`http://localhost:3000/api/games/${currentGame}/players`, {
+        const response = await fetch(`${API_BASE_URL}/api/games/${currentGame}/players`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -299,7 +302,7 @@ async function removePlayer(game, playerIndex) {
     }
     
     try {
-        const response = await fetch(`http://localhost:3000/api/games/${game}/players/${playerIndex}`, {
+        const response = await fetch(`${API_BASE_URL}/api/games/${game}/players/${playerIndex}`, {
             method: 'DELETE'
         });
         
@@ -324,7 +327,7 @@ async function startVoting(game) {
     }
     
     try {
-        const response = await fetch(`http://localhost:3000/api/games/${game}/voting/start`, {
+        const response = await fetch(`${API_BASE_URL}/api/games/${game}/voting/start`, {
             method: 'POST'
         });
         
@@ -349,7 +352,7 @@ async function endVoting(game) {
     }
     
     try {
-        const response = await fetch(`http://localhost:3000/api/games/${game}/voting/end`, {
+        const response = await fetch(`${API_BASE_URL}/api/games/${game}/voting/end`, {
             method: 'POST'
         });
         
@@ -421,7 +424,7 @@ function displayResults(game, teams, maps = null) {
 // Carregar e exibir resultados existentes
 async function loadResults() {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             
@@ -520,7 +523,7 @@ async function startMapVoting() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/valorant/maps/voting/start', {
+        const response = await fetch(`${API_BASE_URL}/api/valorant/maps/voting/start`, {
             method: 'POST'
         });
         
@@ -544,7 +547,7 @@ async function endMapVoting() {
     }
     
     try {
-        const response = await fetch('http://localhost:3000/api/valorant/maps/voting/end', {
+        const response = await fetch(`${API_BASE_URL}/api/valorant/maps/voting/end`, {
             method: 'POST'
         });
         

@@ -15,13 +15,14 @@ function switchToLogin() {
     loginForm.classList.remove('hidden');
 }
 
-// Configuração da API
-const API_BASE_URL = 'http://localhost:3000/api';
+// Configuração da API vinda do config.js
+// Se não estiver disponível, usa localhost como fallback
+const API_BASE_URL = window.API_CONFIG ? API_CONFIG.getBaseURL() : 'http://localhost:3000';
 
 // Funções para trabalhar com a API
 async function loadUsers() {
     try {
-        const response = await fetch(`${API_BASE_URL}/users`);
+        const response = await fetch(`${API_BASE_URL}/api/users`);
         return await response.json();
     } catch (error) {
         console.error('Erro ao carregar usuários:', error);
@@ -32,7 +33,7 @@ async function loadUsers() {
 
 async function loginUser(username, password) {
     try {
-        const response = await fetch(`${API_BASE_URL}/login`, {
+        const response = await fetch(`${API_BASE_URL}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -50,7 +51,7 @@ async function loginUser(username, password) {
 
 async function registerUser(username, email, password) {
     try {
-        const response = await fetch(`${API_BASE_URL}/register`, {
+        const response = await fetch(`${API_BASE_URL}/api/register`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -345,7 +346,7 @@ document.head.appendChild(particleStyles);
 // Função para verificar se o servidor está rodando
 async function checkServerStatus() {
     try {
-        const response = await fetch(`${API_BASE_URL}/stats`);
+        const response = await fetch(`${API_BASE_URL}/api/stats`);
         if (response.ok) {
             const stats = await response.json();
             console.log('📊 Estatísticas do servidor:', stats);

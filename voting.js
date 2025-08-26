@@ -1,4 +1,7 @@
 // Voting Page JavaScript
+// Configuração da API vinda do config.js
+const API_BASE_URL = window.API_CONFIG ? API_CONFIG.getBaseURL() : 'http://localhost:3000';
+
 let currentUser = null;
 let currentGame = '';
 let games = { valorant: null, lol: null };
@@ -34,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Carregar dados dos jogos
 async function loadGamesData() {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             games = data;
@@ -343,7 +346,7 @@ async function confirmSubmitVotes() {
     const votes = userVotes[game];
     
     try {
-        const response = await fetch(`http://localhost:3000/api/games/${game}/vote`, {
+        const response = await fetch(`${API_BASE_URL}/api/games/${game}/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -402,7 +405,7 @@ function viewGameResults(game) {
 // Carregar resultados
 async function loadResults() {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             const resultsContent = document.getElementById('resultsContent');
@@ -452,7 +455,7 @@ async function loadResults() {
 // Carregar resultados de um jogo específico
 async function loadGameSpecificResults(game) {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             const resultsContent = document.getElementById('resultsContent');
@@ -650,7 +653,7 @@ function loadResultsSection() {
 // Carregar dados de resultados para um container específico
 async function loadResultsData(container) {
     try {
-        const response = await fetch('http://localhost:3000/api/games');
+        const response = await fetch(`${API_BASE_URL}/api/games`);
         if (response.ok) {
             const data = await response.json();
             
@@ -838,7 +841,7 @@ function showMapConfirmModal() {
 // Confirmar envio de votos de mapas
 async function confirmSubmitMapVotes() {
     try {
-        const response = await fetch('http://localhost:3000/api/valorant/maps/vote', {
+        const response = await fetch(`${API_BASE_URL}/api/valorant/maps/vote`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
