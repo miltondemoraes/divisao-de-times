@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Final</title>
+</head>
+<body>
+    <h1>Teste Final da API</h1>
+    <div id="result"></div>
+    
+    <script src="config.js"></script>
+    <script>
+        const API_BASE_URL = window.API_CONFIG ? API_CONFIG.getBaseURL() : 'http://localhost:3000';
+        
+        async function testAll() {
+            const result = document.getElementById('result');
+            result.innerHTML = `<p>API_BASE_URL: ${API_BASE_URL}</p>`;
+            
+            // Teste 1: Status
+            try {
+                const statusURL = `${API_BASE_URL}/api/status`;
+                result.innerHTML += `<p>Testando: ${statusURL}</p>`;
+                
+                const response = await fetch(statusURL);
+                result.innerHTML += `<p>Status Response: ${response.status}</p>`;
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    result.innerHTML += `<p style="color: green;">✅ Status OK: ${JSON.stringify(data)}</p>`;
+                } else {
+                    result.innerHTML += `<p style="color: red;">❌ Status Error: ${response.status}</p>`;
+                }
+            } catch (error) {
+                result.innerHTML += `<p style="color: red;">❌ Status Exception: ${error.message}</p>`;
+            }
+            
+            // Teste 2: Login
+            try {
+                const loginURL = `${API_BASE_URL}/api/login`;
+                result.innerHTML += `<p>Testando: ${loginURL}</p>`;
+                
+                const response = await fetch(loginURL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username: 'mutucapin', password: 'jms270804' })
+                });
+                
+                result.innerHTML += `<p>Login Response: ${response.status}</p>`;
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    result.innerHTML += `<p style="color: green;">✅ Login OK: ${JSON.stringify(data)}</p>`;
+                } else {
+                    const errorText = await response.text();
+                    result.innerHTML += `<p style="color: red;">❌ Login Error: ${errorText}</p>`;
+                }
+            } catch (error) {
+                result.innerHTML += `<p style="color: red;">❌ Login Exception: ${error.message}</p>`;
+            }
+        }
+        
+        testAll();
+    </script>
+</body>
+</html>

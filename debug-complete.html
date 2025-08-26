@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .log { background: #f5f5f5; padding: 10px; margin: 5px 0; }
+        .error { background: #ffe6e6; }
+        .success { background: #e6ffe6; }
+    </style>
+</head>
+<body>
+    <h1>Debug do Sistema de Login</h1>
+    <div id="logs"></div>
+    
+    <hr>
+    <h2>Teste de Login</h2>
+    <input type="text" id="username" value="mutucapin" placeholder="Username">
+    <input type="password" id="password" value="jms270804" placeholder="Password">
+    <button onclick="testLogin()">Testar Login</button>
+    
+    <script src="config.js"></script>
+    <script>
+        const logsDiv = document.getElementById('logs');
+        
+        function addLog(message, type = 'info') {
+            const div = document.createElement('div');
+            div.className = `log ${type}`;
+            div.innerHTML = `[${new Date().toLocaleTimeString()}] ${message}`;
+            logsDiv.appendChild(div);
+            console.log(message);
+        }
+        
+        // Replicar exatamente a lógica do script.js
+        const API_BASE_URL = window.API_CONFIG ? API_CONFIG.getBaseURL() : 'http://localhost:3000';
+        
+        addLog(`🔧 API_BASE_URL configurado: ${API_BASE_URL}`);
+        
+        // Função replicada do checkServerStatus
+        async function checkServerStatus() {
+            try {
+                addLog(`🔍 Verificando servidor em: ${API_BASE_URL}/api/stats`);
+                const response = await fetch(`${API_BASE_URL}/api/stats`);
+                addLog(`📡 Resposta recebida - Status: ${response.status}`);
+                
+                if (response.ok) {
+                    const stats = await response.json();
+                    addLog(`📊 Stats: ${JSON.stringify(stats)}`, 'success');
+                    return true;
+                } else {
+                    addLog(`❌ Resposta não OK: ${response.status}`, 'error');
+                    return false;
+                }
+            } catch (error) {
+                addLog(`💥 Erro na verificação: ${error.message}`, 'error');
+                return false;
+            }
+        }
+        
+        // Função replicada do loginUser
+        async function loginUser(username, password) {
+            try {
+                addLog(`🔐 Tentando login: ${username}`);
+                const loginURL = `${API_BASE_URL}/api/login`;
+                addLog(`🔗 URL de login: ${loginURL}`);
+                
+                const response = await fetch(loginURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                addLog(`📡 Status da resposta: ${response.status}`);
+                
+                const data = await response.json();
+                addLog(`📦 Dados recebidos: ${JSON.stringify(data)}`);
+                
+                return { success: response.ok, data };
+            } catch (error) {
+                addLog(`💥 Erro no login: ${error.message}`, 'error');
+                return { success: false, data: { message: 'Erro ao conectar com o servidor' } };
+            }
+        }
+        
+        async function testLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            addLog('=== INICIANDO TESTE DE LOGIN ===');
+            const result = await loginUser(username, password);
+            
+            if (result.success) {
+                addLog(`✅ Login bem-sucedido!`, 'success');
+            } else {
+                addLog(`❌ Login falhou: ${result.data.message}`, 'error');
+            }
+        }
+        
+        // Executar verificação automática
+        document.addEventListener('DOMContentLoaded', async () => {
+            addLog('=== INICIANDO VERIFICAÇÃO AUTOMÁTICA ===');
+            const serverOk = await checkServerStatus();
+            
+            if (serverOk) {
+                addLog('✅ Servidor OK - Sistema inicializado', 'success');
+            } else {
+                addLog('❌ Problema com o servidor', 'error');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -346,7 +346,7 @@ document.head.appendChild(particleStyles);
 // Função para verificar se o servidor está rodando
 async function checkServerStatus() {
     try {
-        const response = await fetch(`${API_BASE_URL}/api/stats`);
+        const response = await fetch(`${API_BASE_URL}/api/status`);
         if (response.ok) {
             const stats = await response.json();
             console.log('📊 Estatísticas do servidor:', stats);

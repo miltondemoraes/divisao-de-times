@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .result { background: #f0f0f0; padding: 10px; margin: 10px 0; }
+        .error { background: #ffe6e6; }
+        .success { background: #e6ffe6; }
+    </style>
+</head>
+<body>
+    <h1>Teste de Login</h1>
+    
+    <div id="config-info" class="result">
+        <h3>Configuração:</h3>
+        <div id="config-details"></div>
+    </div>
+    
+    <form id="loginForm">
+        <input type="text" id="username" placeholder="Username" value="mutucapin">
+        <input type="password" id="password" placeholder="Password" value="jms270804">
+        <button type="submit">Login</button>
+    </form>
+    
+    <div id="result" class="result"></div>
+    
+    <script src="config.js"></script>
+    <script>
+        // Mostrar configuração
+        const configDiv = document.getElementById('config-details');
+        configDiv.innerHTML = `
+            <p><strong>Hostname:</strong> ${window.location.hostname}</p>
+            <p><strong>Base URL:</strong> ${API_CONFIG.getBaseURL()}</p>
+            <p><strong>Login URL:</strong> ${API_CONFIG.getBaseURL()}/api/login</p>
+        `;
+        
+        // Função de teste de login
+        async function testLogin(username, password) {
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = '<p>Testando login...</p>';
+            
+            try {
+                const loginURL = `${API_CONFIG.getBaseURL()}/api/login`;
+                console.log('🔗 Fazendo login em:', loginURL);
+                
+                const response = await fetch(loginURL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ username, password })
+                });
+                
+                console.log('📡 Resposta status:', response.status);
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('✅ Dados recebidos:', data);
+                    resultDiv.innerHTML = `<h3 class="success">Login Sucesso!</h3><pre>${JSON.stringify(data, null, 2)}</pre>`;
+                } else {
+                    const errorText = await response.text();
+                    console.log('❌ Erro:', errorText);
+                    resultDiv.innerHTML = `<h3 class="error">Erro ${response.status}</h3><p>${errorText}</p>`;
+                }
+            } catch (error) {
+                console.error('💥 Erro na requisição:', error);
+                resultDiv.innerHTML = `<h3 class="error">Erro de Rede</h3><p>${error.message}</p>`;
+            }
+        }
+        
+        // Event listener para o form
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            testLogin(username, password);
+        });
+        
+        // Teste automático
+        setTimeout(() => {
+            console.log('🤖 Executando teste automático...');
+            testLogin('mutucapin', 'jms270804');
+        }, 1000);
+    </script>
+</body>
+</html>

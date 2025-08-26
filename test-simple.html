@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teste Simples</title>
+</head>
+<body>
+    <h1>Teste de Configuração</h1>
+    <div id="log"></div>
+    
+    <script>
+        const log = document.getElementById('log');
+        
+        function addLog(message) {
+            log.innerHTML += `<p>${message}</p>`;
+            console.log(message);
+        }
+        
+        addLog('🔄 Carregando configuração...');
+        
+        // Carregar config.js manualmente
+        const script = document.createElement('script');
+        script.src = 'config.js';
+        script.onload = function() {
+            addLog('✅ Config.js carregado');
+            testConfig();
+        };
+        script.onerror = function() {
+            addLog('❌ Erro ao carregar config.js');
+        };
+        document.head.appendChild(script);
+        
+        function testConfig() {
+            try {
+                addLog(`🌐 Hostname: ${window.location.hostname}`);
+                addLog(`📍 Base URL: ${API_CONFIG.getBaseURL()}`);
+                
+                const testURL = `${API_CONFIG.getBaseURL()}/api/stats`;
+                addLog(`🔗 URL de teste: ${testURL}`);
+                
+                // Testar fetch
+                fetch(testURL)
+                    .then(response => {
+                        addLog(`📡 Status: ${response.status}`);
+                        if (response.ok) {
+                            return response.json();
+                        } else {
+                            throw new Error(`HTTP ${response.status}`);
+                        }
+                    })
+                    .then(data => {
+                        addLog(`✅ Sucesso: ${JSON.stringify(data)}`);
+                    })
+                    .catch(error => {
+                        addLog(`❌ Erro: ${error.message}`);
+                    });
+                    
+            } catch (error) {
+                addLog(`💥 Erro geral: ${error.message}`);
+            }
+        }
+    </script>
+</body>
+</html>

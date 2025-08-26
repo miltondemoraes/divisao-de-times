@@ -5,17 +5,17 @@ const API_CONFIG = {
         // Se estiver em produção (hostname não é localhost)
         if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
             // Use a URL atual do site (para Render.com ou qualquer outro deploy)
-            return `${window.location.protocol}//${window.location.host}/api`;
+            return `${window.location.protocol}//${window.location.host}`;
         }
         // Se estiver em desenvolvimento
-        return 'http://localhost:3000/api';
+        return 'http://localhost:3000';
     }
 };
 
 // Função helper para fazer requests
 const apiRequest = async (endpoint, options = {}) => {
     const baseURL = API_CONFIG.getBaseURL();
-    const url = `${baseURL}${endpoint}`;
+    const url = `${baseURL}/api${endpoint}`;
     
     try {
         const response = await fetch(url, {
