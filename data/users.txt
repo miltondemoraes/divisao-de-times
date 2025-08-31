@@ -94,5 +94,13 @@
     "password": "hugo3421",
     "role": "votante",
     "createdAt": "2025-08-31T15:30:01.009Z"
+  },
+  {
+    "id": 1756664453529,
+    "username": "mateusmacedo",
+    "email": "mateusmacedoiv@gmail.com",
+    "password": "m290975m",
+    "role": "votante",
+    "createdAt": "2025-08-31T18:20:53.529Z"
   }
 ]

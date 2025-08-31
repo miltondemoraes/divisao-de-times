@@ -261,16 +261,28 @@
         "Bolas robustas": 7
       },
       "euclidesfaminto": {
-        "CNB Mutuca (Milton)": 2,
-        "N3TU62": 9,
-        "Hugomoura": 9,
-        "Alexesm": 4,
+        "CNB Mutuca (Milton)": 9,
+        "N3TU62": 2,
+        "Hugomoura": 6,
+        "Alexesm": 8,
         "23dede": 8,
-        "EnzinhoCraft": 2,
+        "EnzinhoCraft": 10,
         "Paçoquitas": 10,
         "JonhOPF": 7,
-        "Camdaf": 2,
+        "Camdaf": 9,
         "Bolas robustas": 8
+      },
+      "mateusmacedo": {
+        "CNB Mutuca (Milton)": 8,
+        "N3TU62": 2,
+        "Hugomoura": 7,
+        "Alexesm": 8,
+        "23dede": 9,
+        "EnzinhoCraft": 9,
+        "Paçoquitas": 7,
+        "JonhOPF": 10,
+        "Camdaf": 9,
+        "Bolas robustas": 6
       }
     },
     "voting_active": false,
