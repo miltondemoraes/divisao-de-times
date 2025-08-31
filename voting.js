@@ -62,6 +62,7 @@ function updateNavigationStatus() {
     updateGameNavStatus('valorant');
     updateGameNavStatus('lol');
     updateMapVotingNavStatus(); // Atualizar status da votação de mapas
+    updatePostGameNavStatus(); // Atualizar status da votação pós-jogo
 }
 
 function updateGameNavStatus(game) {
@@ -896,17 +897,18 @@ function showPostGameVoting() {
     document.getElementById('lol-voting').classList.remove('active');
     document.getElementById('map-voting').classList.remove('active');
     document.getElementById('results-section').classList.remove('active');
+    document.getElementById('post-game-voting').classList.remove('active');
     document.getElementById('resultsMessage').style.display = 'none';
     
     // Mostrar seção de pós-jogo
-    document.getElementById('postgame-voting').classList.add('active');
+    document.getElementById('post-game-voting').classList.add('active');
     
     loadPostGameVoting();
 }
 
 // Carregar votação pós-jogo
 function loadPostGameVoting() {
-    const content = document.getElementById('postgameContent');
+    const content = document.getElementById('postGameContent');
     
     // Verificar se há votação pós-jogo ativa para LoL
     if (!games.lol || !games.lol.postGameVoting || !games.lol.postGameVoting.active) {
@@ -938,7 +940,7 @@ function loadPostGameVoting() {
 
 // Renderizar interface de votação pós-jogo
 function renderPostGameVotingInterface() {
-    const content = document.getElementById('postgameContent');
+    const content = document.getElementById('postGameContent');
     const teams = games.lol.teams;
     
     if (!teams || !Array.isArray(teams) || teams.length < 2) {
@@ -1204,6 +1206,29 @@ function updateMapVotingNavStatus() {
     } else {
         statusElement.classList.add('inactive');
         statusElement.title = 'Aguardando';
+    }
+}
+
+// Atualizar status da navegação de pós-jogo
+function updatePostGameNavStatus() {
+    const statusElement = document.getElementById('postGameStatus');
+    
+    if (!statusElement) return;
+    
+    statusElement.className = 'voting-status';
+    
+    if (!games.lol || !games.lol.postGameVoting) {
+        statusElement.classList.add('inactive');
+        statusElement.title = 'Votação não iniciada';
+    } else if (games.lol.postGameVoting.active) {
+        statusElement.classList.add('active');
+        statusElement.title = 'Votação pós-jogo ativa';
+    } else if (games.lol.postGameVoting.votes && Object.keys(games.lol.postGameVoting.votes).length > 0) {
+        statusElement.classList.add('completed');
+        statusElement.title = 'Votação pós-jogo encerrada';
+    } else {
+        statusElement.classList.add('inactive');
+        statusElement.title = 'Aguardando início da votação';
     }
 }
 
