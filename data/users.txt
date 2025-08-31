@@ -2,7 +2,7 @@
   {
     "id": 1,
     "username": "mutucapin",
-    "email": "admin@sososzone.com",
+    "email": "admin@sacanashub.com",
     "password": "jms270804",
     "role": "admin",
     "createdAt": "2025-08-26T13:29:49.054Z"
@@ -10,7 +10,7 @@
   {
     "id": 2,
     "username": "player1",
-    "email": "player1@sososzone.com",
+    "email": "player1@sacanashub.com",
     "password": "123456",
     "role": "votante",
     "createdAt": "2025-08-26T13:29:49.054Z"
@@ -22,5 +22,77 @@
     "password": "jms270804",
     "role": "votante",
     "createdAt": "2025-08-26T14:08:15.344Z"
+  },
+  {
+    "id": 1725123001001,
+    "username": "n3tu62",
+    "email": "n3tu62.gamer@hotmail.com",
+    "password": "Euclides2015@",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.001Z"
+  },
+  {
+    "id": 1725123001002,
+    "username": "euclidesfaminto",
+    "email": "euclides.hungry@gmail.com",
+    "password": "novinha6969",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.002Z"
+  },
+  {
+    "id": 1725123001003,
+    "username": "juzelians",
+    "email": "juzelians.pro@outlook.com",
+    "password": "carrapeta99",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.003Z"
+  },
+  {
+    "id": 1725123001004,
+    "username": "Penis123",
+    "email": "penis.legend@yahoo.com",
+    "password": "CumPissBalls",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.004Z"
+  },
+  {
+    "id": 1725123001005,
+    "username": "23dede",
+    "email": "dede23.player@live.com",
+    "password": "123456",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.005Z"
+  },
+  {
+    "id": 1725123001006,
+    "username": "pimba",
+    "email": "pimba.yan@protonmail.com",
+    "password": "yan2020123",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.006Z"
+  },
+  {
+    "id": 1725123001007,
+    "username": "alexesm",
+    "email": "alexesm@sacanashub.com",
+    "password": "alexesm",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.007Z"
+  },
+  {
+    "id": 1725123001008,
+    "username": "Jopf",
+    "email": "jopf@sacanashub.com",
+    "password": "123456",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.008Z"
+  },
+  {
+    "id": 1725123001009,
+    "username": "hugomoura",
+    "email": "hugomoura@sacanashub.com",
+    "password": "hugo3421",
+    "role": "votante",
+    "createdAt": "2025-08-31T15:30:01.009Z"
   }
 ]

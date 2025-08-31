@@ -32,6 +32,9 @@ async function loadDashboardData() {
         // Carregar players dos jogos
         await loadGamePlayers();
         
+        // Carregar status pós-jogo
+        await loadPostGameStatus();
+        
         // Atualizar interface
         updateDashboard();
         
@@ -380,20 +383,29 @@ async function endVoting(game) {
 function displayResults(game, teams, maps = null) {
     const resultsContainer = document.getElementById(`${game}Results`);
     
+    // Nomes personalizados dos times por jogo
+    const teamNames = {
+        'lol': ['Time Seu Didi', 'Time Bimbo'],
+        'valorant': ['Time 1', 'Time 2']
+    };
+    
     let content = '';
     
     // Exibir times se existirem
     if (teams && teams.length > 0) {
-        content += teams.map((team, index) => `
+        content += teams.map((team, index) => {
+            const teamName = teamNames[game] ? teamNames[game][index] : `Time ${index + 1}`;
+            return `
             <div class="team-result">
-                <div class="team-title">Time ${index + 1} (Média: ${team.averageScore.toFixed(1)})</div>
+                <div class="team-title">${teamName} (Média: ${team.averageScore.toFixed(1)})</div>
                 <div class="team-players">
                     ${team.players.map(player => `
                         <span class="team-player">${player.name} (${player.score.toFixed(1)})</span>
                     `).join('')}
                 </div>
             </div>
-        `).join('');
+        `;
+        }).join('');
     }
     
     // Exibir mapas se for Valorant e tiver mapas selecionados
@@ -687,6 +699,133 @@ async function resetMapVoting() {
     } catch (error) {
         console.error('Erro ao resetar votação de mapas:', error);
         showNotification('Erro ao resetar votação de mapas', 'error');
+    }
+}
+
+// ===== FUNÇÕES DE VOTAÇÃO PÓS-JOGO =====
+
+// Iniciar votação pós-jogo
+async function startPostGameVoting() {
+    try {
+        showNotification('Iniciando votação pós-jogo...', 'info');
+        
+        const response = await fetch(`${API_BASE_URL}/api/lol/post-game/start`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            showNotification(data.message, 'success');
+            updatePostGameStatus(true);
+            await loadDashboardData();
+        } else {
+            showNotification(data.message || 'Erro ao iniciar votação pós-jogo', 'error');
+        }
+    } catch (error) {
+        console.error('Erro ao iniciar votação pós-jogo:', error);
+        showNotification('Erro ao iniciar votação pós-jogo', 'error');
+    }
+}
+
+// Encerrar votação pós-jogo
+async function endPostGameVoting() {
+    try {
+        showNotification('Encerrando votação e calculando resultados...', 'info');
+        
+        const response = await fetch(`${API_BASE_URL}/api/lol/post-game/end`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+            showNotification(data.message, 'success');
+            updatePostGameStatus(false);
+            displayPostGameResults(data.results);
+            await loadDashboardData();
+        } else {
+            showNotification(data.message || 'Erro ao encerrar votação pós-jogo', 'error');
+        }
+    } catch (error) {
+        console.error('Erro ao encerrar votação pós-jogo:', error);
+        showNotification('Erro ao encerrar votação pós-jogo', 'error');
+    }
+}
+
+// Atualizar status da votação pós-jogo
+function updatePostGameStatus(active) {
+    const statusDiv = document.getElementById('postGameStatus');
+    const startBtn = document.getElementById('startPostGameBtn');
+    const endBtn = document.getElementById('endPostGameBtn');
+    
+    if (active) {
+        statusDiv.innerHTML = '<p><i class="fas fa-vote-yea"></i> Status: Votação Ativa - Jogadores podem votar agora!</p>';
+        statusDiv.className = 'post-game-status active';
+        startBtn.disabled = true;
+        endBtn.disabled = false;
+        
+        // Adicionar informação sobre como os jogadores podem votar
+        statusDiv.innerHTML += '<small style="display: block; margin-top: 0.5rem; opacity: 0.8;">Os jogadores devem acessar a página de votação e clicar em "Pós-Jogo"</small>';
+    } else {
+        statusDiv.innerHTML = '<p><i class="fas fa-clock"></i> Status: Aguardando início da votação</p>';
+        statusDiv.className = 'post-game-status';
+        startBtn.disabled = false;
+        endBtn.disabled = true;
+    }
+}
+
+// Exibir resultados da votação pós-jogo
+function displayPostGameResults(results) {
+    const resultsDiv = document.getElementById('postGameResults');
+    const bestDiv = document.getElementById('bestPlayersResults');
+    const worstDiv = document.getElementById('worstPlayersResults');
+    
+    // Exibir melhores jogadores
+    let bestHTML = '';
+    results.best.forEach((result, index) => {
+        bestHTML += `
+            <div class="player-result position-${result.position}">
+                <div class="result-message">${result.message}</div>
+                <div class="result-points">${result.points} pontos</div>
+            </div>
+        `;
+    });
+    bestDiv.innerHTML = bestHTML;
+    
+    // Exibir piores jogadores
+    let worstHTML = '';
+    results.worst.forEach((result, index) => {
+        worstHTML += `
+            <div class="player-result position-${result.position}">
+                <div class="result-message">${result.message}</div>
+                <div class="result-points">${result.points} pontos</div>
+            </div>
+        `;
+    });
+    worstDiv.innerHTML = worstHTML;
+    
+    // Mostrar seção de resultados
+    resultsDiv.style.display = 'block';
+}
+
+// Carregar status da votação pós-jogo
+async function loadPostGameStatus() {
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/lol/post-game/status`);
+        const data = await response.json();
+        
+        if (data.success) {
+            updatePostGameStatus(data.votingActive);
+            
+            if (data.results.best.length > 0 || data.results.worst.length > 0) {
+                displayPostGameResults(data.results);
+            }
+        }
+    } catch (error) {
+        console.error('Erro ao carregar status pós-jogo:', error);
     }
 }
 

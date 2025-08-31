@@ -820,3 +820,386 @@
         font-size: 0.8rem;
     }
 }
+
+/* Post Game Voting Styles */
+.post-game-status {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+.post-game-status.active {
+    background: rgba(255, 193, 7, 0.1);
+    border-color: rgba(255, 193, 7, 0.3);
+}
+
+.post-game-results {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.best-players {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(129, 199, 132, 0.1));
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.worst-players {
+    background: linear-gradient(135deg, rgba(244, 67, 54, 0.1), rgba(239, 83, 80, 0.1));
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.best-players h4 {
+    color: #4caf50;
+    margin: 0 0 1rem 0;
+    font-family: 'Orbitron', monospace;
+}
+
+.worst-players h4 {
+    color: #f44336;
+    margin: 0 0 1rem 0;
+    font-family: 'Orbitron', monospace;
+}
+
+.player-result {
+    background: rgba(255, 255, 255, 0.05);
+    margin: 0.8rem 0;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid;
+    transition: all 0.3s ease;
+}
+
+.player-result.position-1 {
+    border-left-color: #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+}
+
+.player-result.position-2 {
+    border-left-color: #c0c0c0;
+    background: rgba(192, 192, 192, 0.1);
+}
+
+.player-result.position-3 {
+    border-left-color: #cd7f32;
+    background: rgba(205, 127, 50, 0.1);
+}
+
+.player-result:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.result-message {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+    color: #e0e0e0;
+}
+
+.result-points {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .best-players, .worst-players {
+        padding: 1rem;
+    }
+    
+    .player-result {
+        padding: 0.8rem;
+    }
+}
+
+/* Post-Game Voting Styles */
+.info-card {
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.info-header {
+    background: linear-gradient(45deg, #00ff88, #88ffaa);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.info-header i {
+    font-size: 1.3rem;
+    color: #1a1a2e;
+}
+
+.info-header h3 {
+    margin: 0;
+    color: #1a1a2e;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.info-content {
+    padding: 1.5rem;
+}
+
+.info-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.info-content li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-content li:last-child {
+    border-bottom: none;
+}
+
+.info-content li::before {
+    content: '✓';
+    color: #00ff88;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.info-content strong {
+    color: #00ff88;
+}
+
+.post-game-controls {
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.controls-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.controls-header h3 {
+    color: #00ff88;
+    font-size: 1.4rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.large-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.btn-success.large,
+.btn-danger.large {
+    padding: 2rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    text-align: center;
+    min-height: 120px;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-success.large::before,
+.btn-danger.large::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, white, transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-success.large:hover::before,
+.btn-danger.large:hover::before {
+    left: 100%;
+}
+
+.btn-success.large i,
+.btn-danger.large i {
+    font-size: 2rem;
+}
+
+.btn-success.large span,
+.btn-danger.large span {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.btn-success.large small,
+.btn-danger.large small {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+.btn-success.large:hover:not(:disabled) {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(46, 213, 115, 0.4);
+}
+
+.btn-danger.large:hover:not(:disabled) {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 71, 87, 0.4);
+}
+
+.post-game-status {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.post-game-status.active {
+    background: rgba(46, 213, 115, 0.2);
+    border-color: #2ed573;
+    animation: pulse-glow 2s infinite;
+}
+
+.post-game-status p {
+    margin: 0;
+    color: #e0e0e0;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.post-game-status.active p {
+    color: #2ed573;
+    font-weight: bold;
+}
+
+.post-game-results {
+    background: linear-gradient(135deg, rgba(22, 33, 62, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%);
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+.post-game-results h3 {
+    color: #00ff88;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.best-players,
+.worst-players {
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 10px;
+    padding: 1.5rem;
+}
+
+.best-players h4,
+.worst-players h4 {
+    margin: 0 0 1.5rem 0;
+    color: #00ff88;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.worst-players {
+    background: rgba(255, 71, 87, 0.1);
+    border-color: rgba(255, 71, 87, 0.3);
+}
+
+.worst-players h4 {
+    color: #ff4757;
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(46, 213, 115, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(46, 213, 115, 0.6);
+    }
+}
+
+/* Responsive para Post-Game */
+@media (max-width: 768px) {
+    .large-buttons {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .btn-success.large,
+    .btn-danger.large {
+        padding: 1.5rem;
+        min-height: 100px;
+    }
+    
+    .results-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .info-content li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+}

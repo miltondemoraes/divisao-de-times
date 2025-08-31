@@ -97,57 +97,57 @@
         "votes": {}
       },
       {
-        "id": 1756217850730,
-        "name": "Clauderlan (Quer voltar com a Ex)",
-        "addedAt": "2025-08-26T14:17:30.730Z",
+        "id": 1756662494791,
+        "name": "N3TU62",
+        "addedAt": "2025-08-31T17:48:14.791Z",
         "votes": {}
       },
       {
-        "id": 1756217853722,
-        "name": "Blaze09 (Outro viado chamado Guilherme)",
-        "addedAt": "2025-08-26T14:17:33.722Z",
+        "id": 1756662498252,
+        "name": "Hugomoura",
+        "addedAt": "2025-08-31T17:48:18.252Z",
         "votes": {}
       },
       {
-        "id": 1756217857734,
-        "name": "Mulherofobico (Bemmer)",
-        "addedAt": "2025-08-26T14:17:37.734Z",
+        "id": 1756662501008,
+        "name": "Alexesm",
+        "addedAt": "2025-08-31T17:48:21.008Z",
         "votes": {}
       },
       {
-        "id": 1756217860563,
-        "name": "Drk Final Boss (Marx)",
-        "addedAt": "2025-08-26T14:17:40.563Z",
+        "id": 1756662503454,
+        "name": "23dede",
+        "addedAt": "2025-08-31T17:48:23.454Z",
         "votes": {}
       },
       {
-        "id": 1756217865903,
-        "name": "Xota Primo (Primo do Jota)",
-        "addedAt": "2025-08-26T14:17:45.903Z",
+        "id": 1756662506962,
+        "name": "EnzinhoCraft",
+        "addedAt": "2025-08-31T17:48:26.962Z",
         "votes": {}
       },
       {
-        "id": 1756217869584,
-        "name": "Viado Kpop (Autoexplicativo)",
-        "addedAt": "2025-08-26T14:17:49.584Z",
+        "id": 1756662512042,
+        "name": "Paçoquitas",
+        "addedAt": "2025-08-31T17:48:32.042Z",
         "votes": {}
       },
       {
-        "id": 1756217880777,
-        "name": "Agressor, o irmão da Preciosa (Rapha)",
-        "addedAt": "2025-08-26T14:18:00.777Z",
+        "id": 1756662517937,
+        "name": "JonhOPF",
+        "addedAt": "2025-08-31T17:48:37.937Z",
         "votes": {}
       },
       {
-        "id": 1756217898328,
-        "name": "Xota (Jota)",
-        "addedAt": "2025-08-26T14:18:18.328Z",
+        "id": 1756662520968,
+        "name": "TANGOSOO",
+        "addedAt": "2025-08-31T17:48:40.968Z",
         "votes": {}
       },
       {
-        "id": 1756217912306,
-        "name": "Trombeiro (Bida)",
-        "addedAt": "2025-08-26T14:18:32.306Z",
+        "id": 1756662535802,
+        "name": "Camdaf",
+        "addedAt": "2025-08-31T17:48:55.802Z",
         "votes": {}
       }
     ],

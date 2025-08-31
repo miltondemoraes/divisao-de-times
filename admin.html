@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soso Zone - Admin Dashboard</title>
+    <title>Os Sacanas Hub - Admin Dashboard</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="admin.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             <div class="logo-section">
                 <div class="logo">
                     <i class="fas fa-crown"></i>
-                    <h1>Soso Zone</h1>
+                    <h1>Os Sacanas Hub</h1>
                     <span class="admin-badge">ADMIN</span>
                 </div>
             </div>
@@ -46,6 +46,10 @@
             <button class="nav-btn" onclick="showSection('lol')">
                 <i class="fas fa-shield-alt"></i>
                 League of Legends
+            </button>
+            <button class="nav-btn" onclick="showSection('post-game')">
+                <i class="fas fa-medal"></i>
+                Pós-Jogo
             </button>
             <button class="nav-btn" onclick="showSection('results')">
                 <i class="fas fa-trophy"></i>
@@ -248,6 +252,73 @@
                         
                         <div class="players-grid" id="lolPlayersGrid">
                             <!-- Players serão inseridos aqui dinamicamente -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Post Game Section (LoL) -->
+            <section id="post-game-section" class="admin-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-medal"></i> Votação Pós-Jogo - LoL</h2>
+                    <p>Sistema de votação para melhores e piores jogadores após a partida</p>
+                </div>
+                
+                <div class="section-content">
+                    <!-- Informações sobre os requisitos -->
+                    <div class="info-card">
+                        <div class="info-header">
+                            <i class="fas fa-info-circle"></i>
+                            <h3>Como funciona a Votação Pós-Jogo</h3>
+                        </div>
+                        <div class="info-content">
+                            <ul>
+                                <li><strong>Requisito:</strong> É necessário ter feito a divisão dos times do LoL primeiro</li>
+                                <li><strong>Votação MVP:</strong> Jogadores votam no melhor player da partida</li>
+                                <li><strong>Votação Pior Player:</strong> Jogadores votam no pior player da partida</li>
+                                <li><strong>Resultados:</strong> Mostra o ranking completo após o encerramento</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles de votação -->
+                    <div class="voting-controls post-game-controls">
+                        <div class="controls-header">
+                            <h3><i class="fas fa-gamepad"></i> Controles da Votação</h3>
+                        </div>
+                        
+                        <div class="controls-row large-buttons">
+                            <button class="btn-success large" onclick="startPostGameVoting()" id="startPostGameBtn">
+                                <i class="fas fa-play"></i>
+                                <span>Iniciar Votação Pós-Jogo</span>
+                                <small>Permitir que os jogadores votem</small>
+                            </button>
+                            <button class="btn-danger large" onclick="endPostGameVoting()" id="endPostGameBtn" disabled>
+                                <i class="fas fa-stop"></i>
+                                <span>Encerrar e Calcular Resultados</span>
+                                <small>Finalizar votação e mostrar resultados</small>
+                            </button>
+                        </div>
+                        
+                        <div class="post-game-status" id="postGameStatus">
+                            <p><i class="fas fa-clock"></i> Status: Aguardando início da votação</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Resultados da votação -->
+                    <div class="post-game-results" id="postGameResults" style="display: none;">
+                        <h3><i class="fas fa-trophy"></i> Resultados da Votação Pós-Jogo</h3>
+                        
+                        <div class="results-grid">
+                            <div class="best-players">
+                                <h4><i class="fas fa-crown"></i> Melhores Jogadores (MVP)</h4>
+                                <div id="bestPlayersResults"></div>
+                            </div>
+                            
+                            <div class="worst-players">
+                                <h4><i class="fas fa-thumbs-down"></i> Piores Jogadores</h4>
+                                <div id="worstPlayersResults"></div>
+                            </div>
                         </div>
                     </div>
                 </div>

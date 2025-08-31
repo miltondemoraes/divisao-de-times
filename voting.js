@@ -423,7 +423,7 @@ async function loadResults() {
                 html += `
                     <div class="game-results">
                         <h4><i class="fas fa-crosshairs"></i> Valorant</h4>
-                        ${hasValorantTeams ? renderTeams(data.valorant.teams) : ''}
+                        ${hasValorantTeams ? renderTeams(data.valorant.teams, 'valorant') : ''}
                         ${hasValorantMaps ? renderValorantMaps(data.valorant.maps) : ''}
                     </div>
                 `;
@@ -434,7 +434,7 @@ async function loadResults() {
                 html += `
                     <div class="game-results">
                         <h4><i class="fas fa-shield-alt"></i> League of Legends</h4>
-                        ${renderTeams(data.lol.teams)}
+                        ${renderTeams(data.lol.teams, 'lol')}
                     </div>
                 `;
             }
@@ -493,7 +493,7 @@ async function loadGameSpecificResults(game) {
 }
 
 // Renderizar times
-function renderTeams(teams) {
+function renderTeams(teams, game = null) {
     // Se teams é um objeto, converter para array
     let teamsArray = teams;
     if (teams && !Array.isArray(teams)) {
@@ -504,16 +504,25 @@ function renderTeams(teams) {
         return '';
     }
     
-    return teamsArray.map((team, index) => `
+    // Nomes personalizados dos times por jogo
+    const teamNames = {
+        'lol': ['Time Seu Didi', 'Time Bimbo'],
+        'valorant': ['Time 1', 'Time 2']
+    };
+    
+    return teamsArray.map((team, index) => {
+        const teamName = (game && teamNames[game]) ? teamNames[game][index] : `Time ${index + 1}`;
+        return `
         <div class="team-result">
-            <div class="team-title">Time ${index + 1} (Média: ${team.averageScore ? team.averageScore.toFixed(1) : 'N/A'})</div>
+            <div class="team-title">${teamName} (Média: ${team.averageScore ? team.averageScore.toFixed(1) : 'N/A'})</div>
             <div class="team-players">
                 ${team.players ? team.players.map(player => `
                     <span class="team-player">${player.name} (${player.score ? player.score.toFixed(1) : 'N/A'})</span>
                 `).join('') : ''}
             </div>
         </div>
-    `).join('');
+    `;
+    }).join('');
 }
 
 // Renderizar mapas do Valorant
@@ -670,7 +679,7 @@ async function loadResultsData(container) {
                 html += `
                     <div class="game-results">
                         <h4><i class="fas fa-crosshairs"></i> Valorant</h4>
-                        ${hasValorantTeams ? renderTeams(data.valorant.teams) : ''}
+                        ${hasValorantTeams ? renderTeams(data.valorant.teams, 'valorant') : ''}
                         ${hasValorantMaps ? renderValorantMaps(data.valorant.maps) : ''}
                     </div>
                 `;
@@ -681,7 +690,7 @@ async function loadResultsData(container) {
                 html += `
                     <div class="game-results">
                         <h4><i class="fas fa-shield-alt"></i> League of Legends</h4>
-                        ${renderTeams(data.lol.teams)}
+                        ${renderTeams(data.lol.teams, 'lol')}
                     </div>
                 `;
             }
@@ -866,6 +875,314 @@ async function confirmSubmitMapVotes() {
     } catch (error) {
         console.error('Erro ao enviar votos de mapas:', error);
         showNotification('Erro ao conectar com o servidor', 'error');
+    }
+}
+
+// ===== FUNÇÕES PARA VOTAÇÃO PÓS-JOGO =====
+
+// Mostrar votação pós-jogo
+function showPostGameVoting() {
+    // Remover classe active de todos os botões
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    
+    // Adicionar classe active ao botão de pós-jogo
+    event.target.classList.add('active');
+    
+    // Esconder todas as seções
+    document.getElementById('gameSelection').style.display = 'none';
+    document.getElementById('valorant-voting').classList.remove('active');
+    document.getElementById('lol-voting').classList.remove('active');
+    document.getElementById('map-voting').classList.remove('active');
+    document.getElementById('results-section').classList.remove('active');
+    document.getElementById('resultsMessage').style.display = 'none';
+    
+    // Mostrar seção de pós-jogo
+    document.getElementById('postgame-voting').classList.add('active');
+    
+    loadPostGameVoting();
+}
+
+// Carregar votação pós-jogo
+function loadPostGameVoting() {
+    const content = document.getElementById('postgameContent');
+    
+    // Verificar se há votação pós-jogo ativa para LoL
+    if (!games.lol || !games.lol.postGameVoting || !games.lol.postGameVoting.active) {
+        content.innerHTML = `
+            <div class="postgame-status waiting">
+                <i class="fas fa-clock"></i>
+                <h3>Votação Pós-Jogo Não Iniciada</h3>
+                <p>A votação pós-jogo ainda não foi iniciada pelo administrador.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Verificar se o usuário já votou
+    if (games.lol.postGameVoting.votes && games.lol.postGameVoting.votes[currentUser.username]) {
+        content.innerHTML = `
+            <div class="postgame-status success">
+                <i class="fas fa-check-circle"></i>
+                <h3>Voto Registrado</h3>
+                <p>Você já registrou seus votos pós-jogo. Aguarde o encerramento da votação.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Renderizar interface de votação pós-jogo
+    renderPostGameVotingInterface();
+}
+
+// Renderizar interface de votação pós-jogo
+function renderPostGameVotingInterface() {
+    const content = document.getElementById('postgameContent');
+    const teams = games.lol.teams;
+    
+    if (!teams || !Array.isArray(teams) || teams.length < 2) {
+        content.innerHTML = `
+            <div class="postgame-status error">
+                <i class="fas fa-exclamation-circle"></i>
+                <h3>Erro nos Times</h3>
+                <p>Não foi possível carregar os times do LoL para a votação pós-jogo.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Obter todos os jogadores de ambos os times
+    const allPlayers = [];
+    teams.forEach((team, teamIndex) => {
+        if (team.players) {
+            team.players.forEach(player => {
+                allPlayers.push({
+                    ...player,
+                    teamName: teamIndex === 0 ? 'Time Seu Didi' : 'Time Bimbo',
+                    teamIndex: teamIndex
+                });
+            });
+        }
+    });
+    
+    content.innerHTML = `
+        <div class="postgame-header">
+            <h2><i class="fas fa-trophy"></i> Votação Pós-Jogo - LoL</h2>
+            <p>Vote no melhor e pior jogador da partida que acabou de ser disputada.</p>
+        </div>
+        
+        <div class="postgame-teams">
+            ${teams.map((team, index) => `
+                <div class="postgame-team">
+                    <div class="postgame-team-title">
+                        ${index === 0 ? 'Time Seu Didi' : 'Time Bimbo'}
+                    </div>
+                    <div class="postgame-players-list">
+                        ${team.players ? team.players.map(player => `
+                            <div class="postgame-player">
+                                <div class="postgame-player-avatar">
+                                    ${player.name.charAt(0).toUpperCase()}
+                                </div>
+                                <div class="postgame-player-info">
+                                    <div class="postgame-player-name">${player.name}</div>
+                                    <div class="postgame-player-role">Jogador</div>
+                                </div>
+                            </div>
+                        `).join('') : ''}
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+        
+        <div class="postgame-voting-categories">
+            <div class="postgame-category">
+                <div class="postgame-category-header">
+                    <div class="postgame-category-icon mvp">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="postgame-category-title">Melhor Jogador (MVP)</div>
+                    <div class="postgame-category-description">
+                        Vote no jogador que teve a melhor performance na partida
+                    </div>
+                </div>
+                <div class="postgame-player-selection" id="mvp-selection">
+                    ${allPlayers.map(player => `
+                        <div class="postgame-player-option" onclick="selectPostGamePlayer('mvp', '${player.name}', this)">
+                            <input type="radio" name="mvp" value="${player.name}" id="mvp-${player.name}">
+                            <div class="postgame-custom-radio"></div>
+                            <div class="postgame-option-avatar">
+                                ${player.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div class="postgame-option-info">
+                                <div class="postgame-option-name">${player.name}</div>
+                                <div class="postgame-option-team">${player.teamName}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+            
+            <div class="postgame-category">
+                <div class="postgame-category-header">
+                    <div class="postgame-category-icon worst">
+                        <i class="fas fa-thumbs-down"></i>
+                    </div>
+                    <div class="postgame-category-title">Pior Jogador</div>
+                    <div class="postgame-category-description">
+                        Vote no jogador que teve a pior performance na partida
+                    </div>
+                </div>
+                <div class="postgame-player-selection" id="worst-selection">
+                    ${allPlayers.map(player => `
+                        <div class="postgame-player-option" onclick="selectPostGamePlayer('worst', '${player.name}', this)">
+                            <input type="radio" name="worst" value="${player.name}" id="worst-${player.name}">
+                            <div class="postgame-custom-radio"></div>
+                            <div class="postgame-option-avatar">
+                                ${player.name.charAt(0).toUpperCase()}
+                            </div>
+                            <div class="postgame-option-info">
+                                <div class="postgame-option-name">${player.name}</div>
+                                <div class="postgame-option-team">${player.teamName}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>
+        
+        <div class="postgame-submit-section">
+            <button class="postgame-submit-btn" id="submitPostGameBtn" onclick="submitPostGameVotes()" disabled>
+                <i class="fas fa-paper-plane"></i>
+                Enviar Votos Pós-Jogo
+            </button>
+            <div id="postgame-status"></div>
+        </div>
+    `;
+}
+
+// Seleções de votação pós-jogo
+let postGameVotes = {
+    mvp: null,
+    worst: null
+};
+
+// Selecionar jogador na votação pós-jogo
+function selectPostGamePlayer(category, playerName, element) {
+    // Remover seleção anterior na categoria
+    const categoryContainer = document.getElementById(`${category}-selection`);
+    categoryContainer.querySelectorAll('.postgame-player-option').forEach(option => {
+        option.classList.remove('selected');
+    });
+    
+    // Adicionar seleção atual
+    element.classList.add('selected');
+    
+    // Salvar voto
+    postGameVotes[category] = playerName;
+    
+    // Atualizar botão de envio
+    updatePostGameSubmitButton();
+}
+
+// Atualizar botão de envio pós-jogo
+function updatePostGameSubmitButton() {
+    const submitBtn = document.getElementById('submitPostGameBtn');
+    const hasAllVotes = postGameVotes.mvp && postGameVotes.worst;
+    const samePlayer = postGameVotes.mvp === postGameVotes.worst;
+    
+    if (samePlayer && postGameVotes.mvp) {
+        showPostGameStatus('Você não pode votar no mesmo jogador como MVP e pior jogador.', 'warning');
+        submitBtn.disabled = true;
+    } else if (hasAllVotes) {
+        clearPostGameStatus();
+        submitBtn.disabled = false;
+    } else {
+        submitBtn.disabled = true;
+    }
+}
+
+// Mostrar status da votação pós-jogo
+function showPostGameStatus(message, type) {
+    const statusDiv = document.getElementById('postgame-status');
+    statusDiv.className = `postgame-status ${type}`;
+    statusDiv.textContent = message;
+}
+
+// Limpar status da votação pós-jogo
+function clearPostGameStatus() {
+    const statusDiv = document.getElementById('postgame-status');
+    statusDiv.className = '';
+    statusDiv.textContent = '';
+}
+
+// Enviar votos pós-jogo
+async function submitPostGameVotes() {
+    // Validar votos
+    if (!postGameVotes.mvp || !postGameVotes.worst) {
+        showPostGameStatus('Por favor, vote no melhor e pior jogador.', 'error');
+        return;
+    }
+    
+    if (postGameVotes.mvp === postGameVotes.worst) {
+        showPostGameStatus('Você não pode votar no mesmo jogador como MVP e pior jogador.', 'error');
+        return;
+    }
+    
+    try {
+        const response = await fetch(`${API_BASE_URL}/api/lol/postgame/vote`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: currentUser.username,
+                mvp: postGameVotes.mvp,
+                worst: postGameVotes.worst
+            })
+        });
+        
+        if (response.ok) {
+            showNotification('Votos pós-jogo enviados com sucesso!', 'success');
+            showPostGameStatus('Votos enviados com sucesso!', 'success');
+            
+            // Desabilitar interface
+            document.getElementById('submitPostGameBtn').disabled = true;
+            document.querySelectorAll('.postgame-player-option').forEach(option => {
+                option.style.pointerEvents = 'none';
+                option.style.opacity = '0.6';
+            });
+            
+            // Recarregar dados
+            await loadGamesData();
+        } else {
+            const error = await response.json();
+            showPostGameStatus(error.message || 'Erro ao enviar votos pós-jogo', 'error');
+        }
+    } catch (error) {
+        console.error('Erro ao enviar votos pós-jogo:', error);
+        showPostGameStatus('Erro ao conectar com o servidor', 'error');
+    }
+}
+
+// Atualizar status da navegação de mapas
+function updateMapVotingNavStatus() {
+    const statusElement = document.getElementById('mapStatus');
+    
+    statusElement.className = 'voting-status';
+    
+    if (!games.valorant || !games.valorant.maps) {
+        statusElement.classList.add('inactive');
+        statusElement.title = 'Votação não iniciada';
+    } else if (games.valorant.maps.votingActive) {
+        statusElement.classList.add('active');
+        statusElement.title = 'Votação de mapas ativa';
+    } else if (games.valorant.maps.selected && games.valorant.maps.selected.length > 0) {
+        statusElement.classList.add('completed');
+        statusElement.title = 'Votação de mapas encerrada';
+    } else {
+        statusElement.classList.add('inactive');
+        statusElement.title = 'Aguardando início da votação';
     }
 }
 

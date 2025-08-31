@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const PORT = 3000;
 
-console.log('🎮 Soso Zone Server iniciando...');
+console.log('🎮 Os Sacanas Hub Server iniciando...');
 
 // Middlewares
 app.use(cors());
@@ -24,7 +24,7 @@ app.get('/test', (req, res) => {
 });
 
 app.listen(PORT, () => {
-    console.log(`🎮 Soso Zone Server rodando em http://localhost:${PORT}`);
+    console.log(`🎮 Os Sacanas Hub Server rodando em http://localhost:${PORT}`);
     console.log(`👤 Admin: mutucapin/jms270804`);
     console.log(`👥 Acesse: http://localhost:${PORT}`);
 });

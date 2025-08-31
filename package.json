@@ -1,7 +1,7 @@
 {
-  "name": "soso-zone-login",
+  "name": "os-sacanas-hub-login",
   "version": "1.0.0",
-  "description": "Sistema de login Soso Zone com salvamento em arquivo TXT",
+  "description": "Sistema de login Os Sacanas Hub com salvamento em arquivo TXT",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
@@ -18,6 +18,6 @@
     "nodejs",
     "txt-database"
   ],
-  "author": "Soso Zone",
+  "author": "Os Sacanas Hub",
   "license": "MIT"
 }

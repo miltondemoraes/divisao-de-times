@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Balanceamento de Times</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 8px; }
+        .players-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 15px 0; }
+        .player-card { background: #f8f9fa; padding: 10px; border-radius: 5px; text-align: center; }
+        .team { background: #e3f2fd; padding: 15px; margin: 10px 0; border-radius: 8px; }
+        .team h3 { margin: 0 0 10px 0; color: #1976d2; }
+        .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+        .old-method { background: #ffebee; }
+        .new-method { background: #e8f5e8; }
+        .stats { background: #fff3e0; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        button { background: #2196F3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #1976D2; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏆 Teste de Balanceamento de Times</h1>
+        
+        <div class="test-section">
+            <h2>Players de Teste</h2>
+            <button onclick="generateRandomPlayers()">Gerar 10 Players Aleatórios</button>
+            <div id="players-display" class="players-grid"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Comparação de Algoritmos</h2>
+            <button onclick="compareAlgorithms()">Comparar Métodos de Divisão</button>
+            
+            <div class="comparison">
+                <div class="old-method">
+                    <h3>❌ Método Antigo (Alternado)</h3>
+                    <div id="old-teams"></div>
+                </div>
+                
+                <div class="new-method">
+                    <h3>✅ Método Novo (Balanceado)</h3>
+                    <div id="new-teams"></div>
+                </div>
+            </div>
+            
+            <div id="comparison-stats"></div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Teste com o Servidor</h2>
+            <button onclick="testWithServer()">Testar com Dados Reais do Servidor</button>
+            <div id="server-results"></div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+    <script>
+        let testPlayers = [];
+        const API_BASE_URL = window.API_CONFIG ? API_CONFIG.getBaseURL() : 'http://localhost:3000';
+        
+        // Gerar players aleatórios
+        function generateRandomPlayers() {
+            testPlayers = [];
+            const names = ['João', 'Maria', 'Pedro', 'Ana', 'Carlos', 'Julia', 'Rafael', 'Camila', 'Bruno', 'Laura'];
+            
+            for (let i = 0; i < 10; i++) {
+                testPlayers.push({
+                    name: names[i],
+                    score: parseFloat((Math.random() * 9 + 1).toFixed(2)) // 1.00 a 10.00
+                });
+            }
+            
+            displayPlayers();
+        }
+        
+        // Mostrar players
+        function displayPlayers() {
+            const display = document.getElementById('players-display');
+            display.innerHTML = testPlayers.map(p => 
+                `<div class="player-card">
+                    <strong>${p.name}</strong><br>
+                    Score: ${p.score}
+                </div>`
+            ).join('');
+        }
+        
+        // Método antigo (alternado)
+        function divideTeamsOldMethod(players) {
+            const sorted = [...players].sort((a, b) => b.score - a.score);
+            const team1 = [];
+            const team2 = [];
+            
+            sorted.forEach((player, index) => {
+                if (index % 2 === 0) {
+                    team1.push(player);
+                } else {
+                    team2.push(player);
+                }
+            });
+            
+            return [team1, team2];
+        }
+        
+        // Método novo (balanceado)
+        function divideTeamsNewMethod(players) {
+            const numPlayers = players.length;
+            const teamSize = Math.floor(numPlayers / 2);
+            
+            function calculateScoreDifference(team1, team2) {
+                const avg1 = team1.reduce((sum, p) => sum + p.score, 0) / team1.length;
+                const avg2 = team2.reduce((sum, p) => sum + p.score, 0) / team2.length;
+                return Math.abs(avg1 - avg2);
+            }
+            
+            function generateCombinations(players, teamSize) {
+                const combinations = [];
+                
+                function backtrack(start, currentTeam) {
+                    if (currentTeam.length === teamSize) {
+                        const team1 = [...currentTeam];
+                        const team2 = players.filter(p => !team1.includes(p));
+                        combinations.push([team1, team2]);
+                        return;
+                    }
+                    
+                    for (let i = start; i < players.length; i++) {
+                        currentTeam.push(players[i]);
+                        backtrack(i + 1, currentTeam);
+                        currentTeam.pop();
+                    }
+                }
+                
+                backtrack(0, []);
+                return combinations;
+            }
+            
+            const combinations = generateCombinations(players, teamSize);
+            let bestCombination = combinations[0];
+            let smallestDifference = calculateScoreDifference(bestCombination[0], bestCombination[1]);
+            
+            combinations.forEach(([team1, team2]) => {
+                const difference = calculateScoreDifference(team1, team2);
+                if (difference < smallestDifference) {
+                    smallestDifference = difference;
+                    bestCombination = [team1, team2];
+                }
+            });
+            
+            return bestCombination;
+        }
+        
+        // Comparar algoritmos
+        function compareAlgorithms() {
+            if (testPlayers.length === 0) {
+                alert('Primeiro gere os players de teste!');
+                return;
+            }
+            
+            // Método antigo
+            const [oldTeam1, oldTeam2] = divideTeamsOldMethod(testPlayers);
+            const oldAvg1 = oldTeam1.reduce((sum, p) => sum + p.score, 0) / oldTeam1.length;
+            const oldAvg2 = oldTeam2.reduce((sum, p) => sum + p.score, 0) / oldTeam2.length;
+            const oldDifference = Math.abs(oldAvg1 - oldAvg2);
+            
+            // Método novo
+            const [newTeam1, newTeam2] = divideTeamsNewMethod(testPlayers);
+            const newAvg1 = newTeam1.reduce((sum, p) => sum + p.score, 0) / newTeam1.length;
+            const newAvg2 = newTeam2.reduce((sum, p) => sum + p.score, 0) / newTeam2.length;
+            const newDifference = Math.abs(newAvg1 - newAvg2);
+            
+            // Mostrar resultados
+            document.getElementById('old-teams').innerHTML = `
+                <div class="team">
+                    <h4>Time 1 - Média: ${oldAvg1.toFixed(2)}</h4>
+                    ${oldTeam1.map(p => `${p.name} (${p.score})`).join(', ')}
+                </div>
+                <div class="team">
+                    <h4>Time 2 - Média: ${oldAvg2.toFixed(2)}</h4>
+                    ${oldTeam2.map(p => `${p.name} (${p.score})`).join(', ')}
+                </div>
+            `;
+            
+            document.getElementById('new-teams').innerHTML = `
+                <div class="team">
+                    <h4>Time 1 - Média: ${newAvg1.toFixed(2)}</h4>
+                    ${newTeam1.map(p => `${p.name} (${p.score})`).join(', ')}
+                </div>
+                <div class="team">
+                    <h4>Time 2 - Média: ${newAvg2.toFixed(2)}</h4>
+                    ${newTeam2.map(p => `${p.name} (${p.score})`).join(', ')}
+                </div>
+            `;
+            
+            const improvement = ((oldDifference - newDifference) / oldDifference * 100).toFixed(1);
+            
+            document.getElementById('comparison-stats').innerHTML = `
+                <div class="stats">
+                    <h3>📊 Estatísticas de Comparação</h3>
+                    <p><strong>Método Antigo:</strong> Diferença de ${oldDifference.toFixed(3)} entre médias</p>
+                    <p><strong>Método Novo:</strong> Diferença de ${newDifference.toFixed(3)} entre médias</p>
+                    <p><strong>Melhoria:</strong> ${improvement}% mais balanceado!</p>
+                </div>
+            `;
+        }
+        
+        // Testar com servidor real
+        async function testWithServer() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/api/games`);
+                const data = await response.json();
+                
+                document.getElementById('server-results').innerHTML = `
+                    <div class="stats">
+                        <h3>📡 Dados do Servidor</h3>
+                        <p><strong>Valorant:</strong> ${data.valorant.players.length} players</p>
+                        <p><strong>LoL:</strong> ${data.lol.players.length} players</p>
+                        <p><strong>Status:</strong> Conectado com sucesso!</p>
+                        <p>Use o painel admin para testar o novo algoritmo com dados reais.</p>
+                    </div>
+                `;
+            } catch (error) {
+                document.getElementById('server-results').innerHTML = `
+                    <div class="stats">
+                        <h3>❌ Erro de Conexão</h3>
+                        <p>Não foi possível conectar com o servidor: ${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // Gerar players iniciais
+        generateRandomPlayers();
+    </script>
+</body>
+</html>

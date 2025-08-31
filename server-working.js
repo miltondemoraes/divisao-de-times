@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const cors = require('cors');
 
-console.log('🚀 Iniciando Soso Zone Server...');
+console.log('🚀 Iniciando Os Sacanas Hub Server...');
 
 const app = express();
 const PORT = 3000;
@@ -76,7 +76,15 @@ function readGames() {
                     players: [], 
                     votes: {}, 
                     votingActive: false, 
-                    teams: [] 
+                    teams: [],
+                    postGame: {
+                        votingActive: false,
+                        votes: {}, // { username: { best: ['player1', 'player2', 'player3'], worst: ['player4', 'player5', 'player6'] } }
+                        results: {
+                            best: [],
+                            worst: []
+                        }
+                    }
                 }
             };
             writeGames(defaultGames);
@@ -104,7 +112,15 @@ function readGames() {
                 players: [], 
                 votes: {}, 
                 votingActive: false, 
-                teams: [] 
+                teams: [],
+                postGame: {
+                    votingActive: false,
+                    votes: {},
+                    results: {
+                        best: [],
+                        worst: []
+                    }
+                }
             }
         };
         console.log(`🎮 Dados dos jogos carregados`);
@@ -113,7 +129,20 @@ function readGames() {
         console.error('❌ Erro ao ler jogos:', error.message);
         return {
             valorant: { players: [], votes: {}, votingActive: false, teams: [] },
-            lol: { players: [], votes: {}, votingActive: false, teams: [] }
+            lol: { 
+                players: [], 
+                votes: {}, 
+                votingActive: false, 
+                teams: [],
+                postGame: {
+                    votingActive: false,
+                    votes: {},
+                    results: {
+                        best: [],
+                        worst: []
+                    }
+                }
+            }
         };
     }
 }
@@ -223,6 +252,109 @@ app.delete('/api/games/:game/players/:playerIndex', (req, res) => {
     }
 });
 
+// ===== ALGORITMO DE BALANCEAMENTO DE TIMES =====
+
+function balanceTeams(players) {
+    const numPlayers = players.length;
+    const teamSize = Math.floor(numPlayers / 2);
+    
+    // Função para calcular a diferença de médias entre dois times
+    function calculateScoreDifference(team1, team2) {
+        const avg1 = team1.reduce((sum, p) => sum + p.score, 0) / team1.length;
+        const avg2 = team2.reduce((sum, p) => sum + p.score, 0) / team2.length;
+        return Math.abs(avg1 - avg2);
+    }
+    
+    // Função para gerar todas as combinações possíveis de times
+    function generateCombinations(players, teamSize) {
+        const combinations = [];
+        
+        function backtrack(start, currentTeam) {
+            if (currentTeam.length === teamSize) {
+                const team1 = [...currentTeam];
+                const team2 = players.filter(p => !team1.includes(p));
+                combinations.push([team1, team2]);
+                return;
+            }
+            
+            for (let i = start; i < players.length; i++) {
+                currentTeam.push(players[i]);
+                backtrack(i + 1, currentTeam);
+                currentTeam.pop();
+            }
+        }
+        
+        backtrack(0, []);
+        return combinations;
+    }
+    
+    // Para muitos players, usar algoritmo heurístico mais rápido
+    if (numPlayers > 12) {
+        return balanceTeamsHeuristic(players, teamSize);
+    }
+    
+    // Para poucos players, buscar a melhor combinação
+    const combinations = generateCombinations(players, teamSize);
+    let bestCombination = combinations[0];
+    let smallestDifference = calculateScoreDifference(bestCombination[0], bestCombination[1]);
+    
+    combinations.forEach(([team1, team2]) => {
+        const difference = calculateScoreDifference(team1, team2);
+        if (difference < smallestDifference) {
+            smallestDifference = difference;
+            bestCombination = [team1, team2];
+        }
+    });
+    
+    // Formatar resultado
+    const [team1Players, team2Players] = bestCombination;
+    const team1Avg = team1Players.reduce((sum, p) => sum + p.score, 0) / team1Players.length;
+    const team2Avg = team2Players.reduce((sum, p) => sum + p.score, 0) / team2Players.length;
+    
+    return [
+        { players: team1Players, averageScore: parseFloat(team1Avg.toFixed(2)) },
+        { players: team2Players, averageScore: parseFloat(team2Avg.toFixed(2)) }
+    ];
+}
+
+// Algoritmo heurístico para muitos players (mais rápido)
+function balanceTeamsHeuristic(players, teamSize) {
+    const team1 = [];
+    const team2 = [];
+    
+    // Ordenar players por score (maior para menor)
+    const sortedPlayers = [...players].sort((a, b) => b.score - a.score);
+    
+    // Algoritmo guloso: sempre adicionar ao time com menor média atual
+    sortedPlayers.forEach(player => {
+        const team1Avg = team1.length > 0 ? team1.reduce((sum, p) => sum + p.score, 0) / team1.length : 0;
+        const team2Avg = team2.length > 0 ? team2.reduce((sum, p) => sum + p.score, 0) / team2.length : 0;
+        
+        // Se um time está cheio, adicionar ao outro
+        if (team1.length === teamSize) {
+            team2.push(player);
+        } else if (team2.length === teamSize) {
+            team1.push(player);
+        } else {
+            // Adicionar ao time com menor média atual
+            if (team1Avg <= team2Avg) {
+                team1.push(player);
+            } else {
+                team2.push(player);
+            }
+        }
+    });
+    
+    // Calcular médias finais
+    const team1Avg = team1.reduce((sum, p) => sum + p.score, 0) / team1.length;
+    const team2Avg = team2.reduce((sum, p) => sum + p.score, 0) / team2.length;
+    
+    return [
+        { players: team1, averageScore: parseFloat(team1Avg.toFixed(2)) },
+        { players: team2, averageScore: parseFloat(team2Avg.toFixed(2)) }
+    ];
+}
+
 // POST - Iniciar votação
 app.post('/api/games/:game/voting/start', (req, res) => {
     const { game } = req.params;
@@ -269,24 +401,11 @@ app.post('/api/games/:game/voting/end', (req, res) => {
         return { ...player, score: average };
     });
     
-    // Ordenar por score e dividir em times
+    // Ordenar por score em ordem decrescente
     players.sort((a, b) => b.score - a.score);
     
-    const teams = [
-        { players: [], averageScore: 0 },
-        { players: [], averageScore: 0 }
-    ];
-    
-    // Distribuir players alternadamente
-    players.forEach((player, index) => {
-        const teamIndex = index % 2;
-        teams[teamIndex].players.push(player);
-    });
-    
-    // Calcular médias dos times
-    teams.forEach(team => {
-        team.averageScore = team.players.reduce((sum, player) => sum + player.score, 0) / team.players.length;
-    });
+    // Implementar algoritmo de balanceamento inteligente
+    const teams = balanceTeams(players);
     
     games[game].votingActive = false;
     games[game].teams = teams;
@@ -475,7 +594,7 @@ function initializeUsers() {
             {
                 id: 1,
                 username: 'mutucapin',
-                email: 'admin@sososzone.com',
+                email: 'admin@sacanashub.com',
                 password: 'jms270804',
                 role: 'admin',
                 createdAt: new Date().toISOString()
@@ -483,7 +602,7 @@ function initializeUsers() {
             {
                 id: 2,
                 username: 'player1',
-                email: 'player1@sososzone.com',
+                email: 'player1@sacanashub.com',
                 password: '123456',
                 role: 'votante',
                 createdAt: new Date().toISOString()
@@ -598,7 +717,7 @@ app.get('/api/status', (req, res) => {
     const users = readUsers();
     res.json({
         success: true,
-        server: 'Soso Zone',
+        server: 'Os Sacanas Hub',
         timestamp: new Date().toISOString(),
         users: users.length,
         admins: users.filter(u => u.role === 'admin').length,
@@ -674,6 +793,205 @@ app.post('/api/games/valorant/reset-maps', (req, res) => {
     }
 });
 
+// ===== ENDPOINTS PARA VOTAÇÃO PÓS-JOGO (LoL) =====
+
+// POST - Iniciar votação pós-jogo
+app.post('/api/lol/post-game/start', (req, res) => {
+    try {
+        const games = readGames();
+        
+        // Verificar se há players suficientes
+        if (!games.lol.players || games.lol.players.length < 3) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'É necessário ter pelo menos 3 players para iniciar a votação pós-jogo' 
+            });
+        }
+        
+        // Inicializar votação pós-jogo
+        games.lol.postGame.votingActive = true;
+        games.lol.postGame.votes = {};
+        games.lol.postGame.results = { best: [], worst: [] };
+        
+        if (writeGames(games)) {
+            res.json({ 
+                success: true, 
+                message: 'Votação pós-jogo iniciada com sucesso!',
+                players: games.lol.players.map(p => p.name)
+            });
+            console.log('🏆 Votação pós-jogo do LoL iniciada');
+        } else {
+            res.status(500).json({ success: false, message: 'Erro ao iniciar votação pós-jogo' });
+        }
+    } catch (error) {
+        console.error('❌ Erro ao iniciar votação pós-jogo:', error);
+        res.status(500).json({ success: false, message: 'Erro interno do servidor' });
+    }
+});
+
+// POST - Registrar voto pós-jogo
+app.post('/api/lol/post-game/vote', (req, res) => {
+    try {
+        const { username, best, worst } = req.body;
+        
+        // Validações
+        if (!username || !best || !worst) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Username, melhores e piores jogadores são obrigatórios' 
+            });
+        }
+        
+        if (!Array.isArray(best) || !Array.isArray(worst)) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Melhores e piores jogadores devem ser arrays' 
+            });
+        }
+        
+        if (best.length !== 3 || worst.length !== 3) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Deve votar em exatamente 3 melhores e 3 piores jogadores' 
+            });
+        }
+        
+        const games = readGames();
+        
+        if (!games.lol.postGame.votingActive) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Votação pós-jogo não está ativa' 
+            });
+        }
+        
+        // Registrar voto
+        games.lol.postGame.votes[username] = { best, worst };
+        
+        if (writeGames(games)) {
+            res.json({ 
+                success: true, 
+                message: 'Voto pós-jogo registrado com sucesso!' 
+            });
+            console.log(`🗳️ Voto pós-jogo registrado de ${username}`);
+        } else {
+            res.status(500).json({ success: false, message: 'Erro ao registrar voto pós-jogo' });
+        }
+    } catch (error) {
+        console.error('❌ Erro ao registrar voto pós-jogo:', error);
+        res.status(500).json({ success: false, message: 'Erro interno do servidor' });
+    }
+});
+
+// POST - Encerrar votação pós-jogo e calcular resultados
+app.post('/api/lol/post-game/end', (req, res) => {
+    try {
+        const games = readGames();
+        
+        if (!games.lol.postGame.votingActive) {
+            return res.status(400).json({ 
+                success: false, 
+                message: 'Não há votação pós-jogo ativa' 
+            });
+        }
+        
+        // Calcular resultados
+        const votes = games.lol.postGame.votes;
+        const bestCount = {};
+        const worstCount = {};
+        
+        // Contar votos com pontuação (1º lugar = 3 pontos, 2º = 2 pontos, 3º = 1 ponto)
+        Object.values(votes).forEach(vote => {
+            // Melhores jogadores
+            vote.best.forEach((player, index) => {
+                const points = 3 - index; // 1º = 3pts, 2º = 2pts, 3º = 1pt
+                bestCount[player] = (bestCount[player] || 0) + points;
+            });
+            
+            // Piores jogadores
+            vote.worst.forEach((player, index) => {
+                const points = 3 - index; // 1º = 3pts, 2º = 2pts, 3º = 1pt
+                worstCount[player] = (worstCount[player] || 0) + points;
+            });
+        });
+        
+        // Ordenar e pegar top 3
+        const bestResults = Object.entries(bestCount)
+            .sort(([,a], [,b]) => b - a)
+            .slice(0, 3)
+            .map(([player, points], index) => ({ 
+                position: index + 1, 
+                player, 
+                points,
+                message: getBestPlayerMessage(index + 1, player)
+            }));
+        
+        const worstResults = Object.entries(worstCount)
+            .sort(([,a], [,b]) => b - a)
+            .slice(0, 3)
+            .map(([player, points], index) => ({ 
+                position: index + 1, 
+                player, 
+                points,
+                message: getWorstPlayerMessage(index + 1, player)
+            }));
+        
+        // Salvar resultados
+        games.lol.postGame.results = { best: bestResults, worst: worstResults };
+        games.lol.postGame.votingActive = false;
+        
+        if (writeGames(games)) {
+            res.json({ 
+                success: true, 
+                message: 'Votação pós-jogo encerrada e resultados calculados!',
+                results: { best: bestResults, worst: worstResults }
+            });
+            console.log('🏆 Votação pós-jogo do LoL encerrada e resultados calculados');
+        } else {
+            res.status(500).json({ success: false, message: 'Erro ao encerrar votação pós-jogo' });
+        }
+    } catch (error) {
+        console.error('❌ Erro ao encerrar votação pós-jogo:', error);
+        res.status(500).json({ success: false, message: 'Erro interno do servidor' });
+    }
+});
+
+// Funções auxiliares para mensagens personalizadas
+function getBestPlayerMessage(position, player) {
+    switch(position) {
+        case 1: return `A Dona Maria hoje é do: ${player}`;
+        case 2: return `Hoje a Aninha fica com o: ${player}`;
+        case 3: return `A Cleusa sobrou pro: ${player}`;
+        default: return `${position}º lugar: ${player}`;
+    }
+}
+
+function getWorstPlayerMessage(position, player) {
+    switch(position) {
+        case 1: return `Hoje o Bimbo e o seu Didi se divertiram no papeiro do: ${player}`;
+        case 2: return `Seu Carlos botou legal no: ${player}`;
+        case 3: return `Carlinhos fez um tobogã de porra no papeiro do: ${player}`;
+        default: return `${position}º pior: ${player}`;
+    }
+}
+
+// GET - Status da votação pós-jogo
+app.get('/api/lol/post-game/status', (req, res) => {
+    try {
+        const games = readGames();
+        res.json({
+            success: true,
+            votingActive: games.lol.postGame?.votingActive || false,
+            totalVotes: Object.keys(games.lol.postGame?.votes || {}).length,
+            results: games.lol.postGame?.results || { best: [], worst: [] },
+            players: games.lol.players.map(p => p.name)
+        });
+    } catch (error) {
+        console.error('❌ Erro ao buscar status pós-jogo:', error);
+        res.status(500).json({ success: false, message: 'Erro interno do servidor' });
+    }
+});
+
 // Teste
 app.get('/test', (req, res) => {
     res.json({ 
@@ -691,12 +1009,12 @@ try {
     
     app.listen(PORT, () => {
         console.log('');
-        console.log('🎮 ===== SOSO ZONE SERVER =====');
+        console.log('🎮 ===== OS SACANAS HUB SERVER =====');
         console.log(`🌐 Rodando em: http://localhost:${PORT}`);
         console.log(`👤 Admin: mutucapin / jms270804`);
         console.log(`👥 Votante teste: player1 / 123456`);
         console.log(`📁 Dados em: ${USERS_FILE}`);
-        console.log('=============================');
+        console.log('===================================');
         console.log('');
         console.log('✅ Servidor pronto! Acesse http://localhost:3000');
     });

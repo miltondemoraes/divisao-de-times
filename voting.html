@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soso Zone - Votação</title>
+    <title>Os Sacanas Hub - Votação</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="voting.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             <div class="logo-section">
                 <div class="logo">
                     <i class="fas fa-vote-yea"></i>
-                    <h1>Soso Zone</h1>
+                    <h1>Os Sacanas Hub</h1>
                     <span class="voter-badge">VOTANTE</span>
                 </div>
             </div>
@@ -49,6 +49,11 @@
                 <i class="fas fa-shield-alt"></i>
                 League of Legends
                 <span class="voting-status" id="lolStatus">●</span>
+            </button>
+            <button class="nav-btn" onclick="showPostGame()">
+                <i class="fas fa-medal"></i>
+                Pós-Jogo LoL
+                <span class="voting-status" id="postGameStatus">●</span>
             </button>
             <button class="nav-btn" onclick="showResults()">
                 <i class="fas fa-trophy"></i>
@@ -120,6 +125,41 @@
                     <button class="btn-primary" onclick="submitMapVotes()" id="submitMapBtn" disabled>
                         <i class="fas fa-map-marked-alt"></i>
                         Enviar Votos dos Mapas
+                    </button>
+                </div>
+            </section>
+
+            <!-- Post Game Voting Section -->
+            <section id="post-game-voting" class="voting-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-medal"></i> Votação Pós-Jogo - LoL</h2>
+                    <p id="postGameDescription">Vote nos 3 melhores e 3 piores jogadores da partida</p>
+                </div>
+                
+                <div class="voting-content" id="postGameContent">
+                    <div class="post-game-categories">
+                        <div class="category best-category">
+                            <h3><i class="fas fa-star"></i> Melhores Jogadores</h3>
+                            <p>Selecione os 3 melhores jogadores (1º, 2º e 3º lugar)</p>
+                            <div class="players-selection" id="bestPlayersSelection">
+                                <!-- Players para melhor serão inseridos aqui -->
+                            </div>
+                        </div>
+                        
+                        <div class="category worst-category">
+                            <h3><i class="fas fa-thumbs-down"></i> Piores Jogadores</h3>
+                            <p>Selecione os 3 piores jogadores (1º, 2º e 3º lugar)</p>
+                            <div class="players-selection" id="worstPlayersSelection">
+                                <!-- Players para pior serão inseridos aqui -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="voting-actions">
+                    <button class="btn-primary" onclick="submitPostGameVotes()" id="submitPostGameBtn" disabled>
+                        <i class="fas fa-vote-yea"></i>
+                        Enviar Votos Pós-Jogo
                     </button>
                 </div>
             </section>

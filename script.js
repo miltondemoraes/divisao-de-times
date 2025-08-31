@@ -366,7 +366,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const serverOk = await checkServerStatus();
     
     if (serverOk) {
-        console.log('🎮 Soso Zone Login System Initialized');
+        console.log('🎮 Os Sacanas Hub Login System Initialized');
         console.log('👤 Usuários de teste: admin/admin123, player1/123456');
         console.log('📁 Dados salvos em: data/users.txt');
     }
@@ -403,7 +403,7 @@ async function exportUserData() {
         
         const link = document.createElement('a');
         link.href = URL.createObjectURL(dataBlob);
-        link.download = 'soso_zone_users_backup.txt';
+        link.download = 'os_sacanas_hub_users_backup.txt';
         link.click();
         
         showMessage('Dados exportados com sucesso!', 'success');
