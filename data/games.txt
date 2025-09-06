@@ -151,10 +151,119 @@
         "votes": {}
       }
     ],
-    "votes": {},
+    "votes": {
+      "juzelians": {
+        "CNB Mutuca (Milton)": 8,
+        "N3TU62": 5,
+        "Hugomoura": 6,
+        "Alexesm": 8,
+        "23dede": 8,
+        "Paçoquitas": 4,
+        "JonhOPF": 9,
+        "Bolas robustas": 8,
+        "juzelians": 6,
+        "TANGOSOO": 5
+      },
+      "pimba": {
+        "CNB Mutuca (Milton)": 9,
+        "N3TU62": 4,
+        "Hugomoura": 7,
+        "Alexesm": 9,
+        "23dede": 9,
+        "Paçoquitas": 6,
+        "JonhOPF": 10,
+        "Bolas robustas": 8,
+        "juzelians": 7,
+        "TANGOSOO": 7
+      },
+      "mutucapingusso": {
+        "CNB Mutuca (Milton)": 10,
+        "N3TU62": 1,
+        "Hugomoura": 4,
+        "Alexesm": 6,
+        "23dede": 6,
+        "Paçoquitas": 3,
+        "JonhOPF": 8,
+        "Bolas robustas": 6,
+        "juzelians": 6,
+        "TANGOSOO": 4
+      },
+      "n3tu62": {
+        "CNB Mutuca (Milton)": 9,
+        "N3TU62": 1,
+        "Hugomoura": 5,
+        "Alexesm": 8,
+        "23dede": 8,
+        "Paçoquitas": 6,
+        "JonhOPF": 10,
+        "Bolas robustas": 8,
+        "juzelians": 6,
+        "TANGOSOO": 6
+      },
+      "hugomoura": {
+        "CNB Mutuca (Milton)": 8,
+        "N3TU62": 5,
+        "Hugomoura": 6,
+        "Alexesm": 8,
+        "23dede": 8,
+        "Paçoquitas": 4,
+        "JonhOPF": 10,
+        "Bolas robustas": 7,
+        "juzelians": 6,
+        "TANGOSOO": 6
+      },
+      "23dede": {
+        "CNB Mutuca (Milton)": 9,
+        "N3TU62": 4,
+        "Hugomoura": 6,
+        "Alexesm": 8,
+        "23dede": 7,
+        "Paçoquitas": 5,
+        "JonhOPF": 10,
+        "Bolas robustas": 7,
+        "juzelians": 6,
+        "TANGOSOO": 7
+      },
+      "alexesm": {
+        "CNB Mutuca (Milton)": 8,
+        "N3TU62": 5,
+        "Hugomoura": 6,
+        "Alexesm": 7,
+        "23dede": 8,
+        "Paçoquitas": 5,
+        "JonhOPF": 10,
+        "Bolas robustas": 6,
+        "juzelians": 6,
+        "TANGOSOO": 6
+      },
+      "Jopf": {
+        "CNB Mutuca (Milton)": 9,
+        "N3TU62": 4,
+        "Hugomoura": 7,
+        "Alexesm": 9,
+        "23dede": 9,
+        "Paçoquitas": 5,
+        "JonhOPF": 10,
+        "Bolas robustas": 7,
+        "juzelians": 6,
+        "TANGOSOO": 7
+      },
+      "mateusmacedo": {
+        "CNB Mutuca (Milton)": 8,
+        "N3TU62": 2,
+        "Hugomoura": 5,
+        "Alexesm": 9,
+        "23dede": 9,
+        "Paçoquitas": 5,
+        "JonhOPF": 9,
+        "Bolas robustas": 5,
+        "juzelians": 6,
+        "TANGOSOO": 6
+      }
+    },
     "voting_active": false,
     "teams": [],
-    "votingActive": false,
+    "votingActive": true,
     "votingOpen": false
   }
 }
