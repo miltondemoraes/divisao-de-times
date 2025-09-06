@@ -121,12 +121,6 @@
         "votes": {}
       },
       {
-        "id": 1756662506962,
-        "name": "EnzinhoCraft",
-        "addedAt": "2025-08-31T17:48:26.962Z",
-        "votes": {}
-      },
-      {
         "id": 1756662512042,
         "name": "Paçoquitas",
         "addedAt": "2025-08-31T17:48:32.042Z",
@@ -139,155 +133,28 @@
         "votes": {}
       },
       {
-        "id": 1756662535802,
-        "name": "Camdaf",
-        "addedAt": "2025-08-31T17:48:55.802Z",
-        "votes": {}
-      },
-      {
         "id": 1756663187612,
         "name": "Bolas robustas",
         "addedAt": "2025-08-31T17:59:47.612Z",
         "votes": {}
+      },
+      {
+        "id": 1757178486097,
+        "name": "juzelians",
+        "addedAt": "2025-09-06T17:08:06.097Z",
+        "votes": {}
+      },
+      {
+        "id": 1757178492310,
+        "name": "TANGOSOO",
+        "addedAt": "2025-09-06T17:08:12.310Z",
+        "votes": {}
       }
     ],
-    "votes": {
-      "mutucapingusso": {
-        "CNB Mutuca (Milton)": 10,
-        "N3TU62": 5,
-        "Hugomoura": 5,
-        "Alexesm": 8,
-        "23dede": 8,
-        "EnzinhoCraft": 9,
-        "Paçoquitas": 3,
-        "JonhOPF": 9,
-        "Camdaf": 8,
-        "Bolas robustas": 6
-      },
-      "23dede": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 4,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "23dede": 8,
-        "EnzinhoCraft": 10,
-        "Paçoquitas": 3,
-        "JonhOPF": 10,
-        "Camdaf": 10,
-        "Bolas robustas": 7
-      },
-      "alexesm": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 5,
-        "Hugomoura": 7,
-        "Alexesm": 7,
-        "23dede": 9,
-        "EnzinhoCraft": 10,
-        "Paçoquitas": 5,
-        "JonhOPF": 10,
-        "Camdaf": 10,
-        "Bolas robustas": 6
-      },
-      "camdaf": {
-        "CNB Mutuca (Milton)": 6,
-        "N3TU62": 3,
-        "Hugomoura": 4,
-        "Alexesm": 6,
-        "23dede": 7,
-        "EnzinhoCraft": 8,
-        "Paçoquitas": 1,
-        "JonhOPF": 9,
-        "Camdaf": 8,
-        "Bolas robustas": 6
-      },
-      "juzelians": {
-        "CNB Mutuca (Milton)": 7,
-        "N3TU62": 5,
-        "Hugomoura": 6,
-        "Alexesm": 7,
-        "23dede": 8,
-        "EnzinhoCraft": 9,
-        "Paçoquitas": 5,
-        "JonhOPF": 9,
-        "Camdaf": 9,
-        "Bolas robustas": 8
-      },
-      "hugomoura": {
-        "CNB Mutuca (Milton)": 7,
-        "N3TU62": 5,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "23dede": 8,
-        "EnzinhoCraft": 10,
-        "Paçoquitas": 4,
-        "JonhOPF": 10,
-        "Camdaf": 9,
-        "Bolas robustas": 7
-      },
-      "Jopf": {
-        "CNB Mutuca (Milton)": 9,
-        "N3TU62": 4,
-        "Hugomoura": 6,
-        "Alexesm": 9,
-        "23dede": 9,
-        "EnzinhoCraft": 10,
-        "Paçoquitas": 4,
-        "JonhOPF": 10,
-        "Camdaf": 9,
-        "Bolas robustas": 7
-      },
-      "pimba": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 4,
-        "Hugomoura": 7,
-        "Alexesm": 8,
-        "23dede": 8,
-        "EnzinhoCraft": 9,
-        "Paçoquitas": 5,
-        "JonhOPF": 9,
-        "Camdaf": 9,
-        "Bolas robustas": 7
-      },
-      "Penis123": {
-        "CNB Mutuca (Milton)": 10,
-        "N3TU62": 4,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "23dede": 9,
-        "EnzinhoCraft": 10,
-        "Paçoquitas": 4,
-        "JonhOPF": 10,
-        "Camdaf": 9,
-        "Bolas robustas": 7
-      },
-      "euclidesfaminto": {
-        "CNB Mutuca (Milton)": 9,
-        "N3TU62": 2,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "23dede": 8,
-        "EnzinhoCraft": 10,
-        "Paçoquitas": 10,
-        "JonhOPF": 7,
-        "Camdaf": 9,
-        "Bolas robustas": 8
-      },
-      "mateusmacedo": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 2,
-        "Hugomoura": 7,
-        "Alexesm": 8,
-        "23dede": 9,
-        "EnzinhoCraft": 9,
-        "Paçoquitas": 7,
-        "JonhOPF": 10,
-        "Camdaf": 9,
-        "Bolas robustas": 6
-      }
-    },
+    "votes": {},
     "voting_active": false,
     "teams": [],
-    "votingActive": true,
+    "votingActive": false,
     "votingOpen": false
   }
 }
