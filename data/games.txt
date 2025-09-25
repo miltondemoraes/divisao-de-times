@@ -44,12 +44,6 @@
         "votes": {}
       },
       {
-        "id": 1756217743664,
-        "name": "Xota Primo (Primo do Jota)",
-        "addedAt": "2025-08-26T14:15:43.664Z",
-        "votes": {}
-      },
-      {
         "id": 1756217776062,
         "name": "Viado Kpop (Autoexplicativo)",
         "addedAt": "2025-08-26T14:16:16.062Z",
@@ -60,9 +54,124 @@
         "name": "Blaze09 (Outro viado chamado Guilherme)",
         "addedAt": "2025-08-26T14:17:14.738Z",
         "votes": {}
+      },
+      {
+        "id": 1758764352136,
+        "name": "DG DO MAL (FEI QUE DOI)",
+        "addedAt": "2025-09-25T01:39:12.136Z",
+        "votes": {}
       }
     ],
-    "votes": {},
+    "votes": {
+      "mutucapingusso": {
+        "CNB Mutuca (Milton)": 10,
+        "Trombeiro (Bida)": 4,
+        "Xota (Jota)": 10,
+        "Drk Final Boss (Marx)": 10,
+        "Clauderlan (Quer voltar com a Ex)": 7,
+        "Mulherofobico (Bemmer)": 4,
+        "Agressor, o irmão da Preciosa (Rapha)": 7,
+        "Viado Kpop (Autoexplicativo)": 5,
+        "Blaze09 (Outro viado chamado Guilherme)": 9,
+        "DG DO MAL (FEI QUE DOI)": 7
+      },
+      "marx": {
+        "CNB Mutuca (Milton)": 5,
+        "Trombeiro (Bida)": 5,
+        "Xota (Jota)": 8,
+        "Drk Final Boss (Marx)": 10,
+        "Clauderlan (Quer voltar com a Ex)": 7,
+        "Mulherofobico (Bemmer)": 6,
+        "Agressor, o irmão da Preciosa (Rapha)": 8,
+        "Viado Kpop (Autoexplicativo)": 6,
+        "Blaze09 (Outro viado chamado Guilherme)": 7,
+        "DG DO MAL (FEI QUE DOI)": 7
+      },
+      "joaorleao": {
+        "CNB Mutuca (Milton)": 6,
+        "Trombeiro (Bida)": 6,
+        "Xota (Jota)": 8,
+        "Drk Final Boss (Marx)": 9,
+        "Clauderlan (Quer voltar com a Ex)": 8,
+        "Mulherofobico (Bemmer)": 6,
+        "Agressor, o irmão da Preciosa (Rapha)": 8,
+        "Viado Kpop (Autoexplicativo)": 7,
+        "Blaze09 (Outro viado chamado Guilherme)": 8,
+        "DG DO MAL (FEI QUE DOI)": 7
+      },
+      "nothG": {
+        "CNB Mutuca (Milton)": 6,
+        "Trombeiro (Bida)": 3,
+        "Xota (Jota)": 7,
+        "Drk Final Boss (Marx)": 8,
+        "Clauderlan (Quer voltar com a Ex)": 4,
+        "Mulherofobico (Bemmer)": 6,
+        "Agressor, o irmão da Preciosa (Rapha)": 7,
+        "Viado Kpop (Autoexplicativo)": 5,
+        "Blaze09 (Outro viado chamado Guilherme)": 6,
+        "DG DO MAL (FEI QUE DOI)": 5
+      },
+      "bida1": {
+        "CNB Mutuca (Milton)": 7,
+        "Trombeiro (Bida)": 5,
+        "Xota (Jota)": 8,
+        "Drk Final Boss (Marx)": 9,
+        "Clauderlan (Quer voltar com a Ex)": 8,
+        "Mulherofobico (Bemmer)": 7,
+        "Agressor, o irmão da Preciosa (Rapha)": 9,
+        "Viado Kpop (Autoexplicativo)": 7,
+        "Blaze09 (Outro viado chamado Guilherme)": 8,
+        "DG DO MAL (FEI QUE DOI)": 8
+      },
+      "OlimpioBarbosa": {
+        "CNB Mutuca (Milton)": 6,
+        "Trombeiro (Bida)": 6,
+        "Xota (Jota)": 8,
+        "Drk Final Boss (Marx)": 9,
+        "Clauderlan (Quer voltar com a Ex)": 7,
+        "Mulherofobico (Bemmer)": 7,
+        "Agressor, o irmão da Preciosa (Rapha)": 9,
+        "Viado Kpop (Autoexplicativo)": 6,
+        "Blaze09 (Outro viado chamado Guilherme)": 8,
+        "DG DO MAL (FEI QUE DOI)": 7
+      },
+      "joaozinho": {
+        "CNB Mutuca (Milton)": 7,
+        "Trombeiro (Bida)": 3,
+        "Xota (Jota)": 8,
+        "Drk Final Boss (Marx)": 10,
+        "Clauderlan (Quer voltar com a Ex)": 7,
+        "Mulherofobico (Bemmer)": 6,
+        "Agressor, o irmão da Preciosa (Rapha)": 9,
+        "Viado Kpop (Autoexplicativo)": 4,
+        "Blaze09 (Outro viado chamado Guilherme)": 7,
+        "DG DO MAL (FEI QUE DOI)": 8
+      },
+      "aNTONIO": {
+        "CNB Mutuca (Milton)": 8,
+        "Trombeiro (Bida)": 3,
+        "Xota (Jota)": 10,
+        "Drk Final Boss (Marx)": 7,
+        "Clauderlan (Quer voltar com a Ex)": 7,
+        "Mulherofobico (Bemmer)": 10,
+        "Agressor, o irmão da Preciosa (Rapha)": 7,
+        "Viado Kpop (Autoexplicativo)": 10,
+        "Blaze09 (Outro viado chamado Guilherme)": 7,
+        "DG DO MAL (FEI QUE DOI)": 7
+      },
+      "anton": {
+        "CNB Mutuca (Milton)": 6,
+        "Trombeiro (Bida)": 6,
+        "Xota (Jota)": 8,
+        "Drk Final Boss (Marx)": 9,
+        "Clauderlan (Quer voltar com a Ex)": 7,
+        "Mulherofobico (Bemmer)": 7,
+        "Agressor, o irmão da Preciosa (Rapha)": 8,
+        "Viado Kpop (Autoexplicativo)": 7,
+        "Blaze09 (Outro viado chamado Guilherme)": 8,
+        "DG DO MAL (FEI QUE DOI)": 7
+      }
+    },
     "voting_active": false,
     "teams": [],
     "maps": {
@@ -80,13 +189,84 @@
         "Abyss",
         "Corrode"
       ],
-      "votes": {},
-      "votingActive": false,
+      "votes": {
+        "marx": [
+          "Corrode",
+          "Ascent",
+          "Bind",
+          "Haven",
+          "Lotus"
+        ],
+        "nothG": [
+          "Icebox",
+          "Lotus",
+          "Pearl",
+          "Corrode",
+          "Haven"
+        ],
+        "joaorleao": [
+          "Sunset",
+          "Lotus",
+          "Fracture",
+          "Icebox",
+          "Bind"
+        ],
+        "bida1": [
+          "Split",
+          "Pearl",
+          "Icebox",
+          "Sunset",
+          "Corrode"
+        ],
+        "claui": [
+          "Icebox",
+          "Sunset",
+          "Corrode",
+          "Split",
+          "Lotus"
+        ],
+        "mutucapingusso": [
+          "Split",
+          "Pearl",
+          "Fracture",
+          "Haven",
+          "Sunset"
+        ],
+        "OlimpioBarbosa": [
+          "Corrode",
+          "Bind",
+          "Pearl",
+          "Lotus",
+          "Split"
+        ],
+        "DGDOMAL": [
+          "Bind",
+          "Pearl",
+          "Lotus",
+          "Split",
+          "Haven"
+        ],
+        "joaozinho": [
+          "Haven",
+          "Lotus",
+          "Pearl",
+          "Ascent",
+          "Abyss"
+        ],
+        "aNTONIO": [
+          "Icebox",
+          "Breeze",
+          "Abyss",
+          "Fracture",
+          "Split"
+        ]
+      },
+      "votingActive": true,
       "selected": []
     },
     "votingOpen": false,
     "mapVotingOpen": false,
-    "votingActive": false
+    "votingActive": true
   },
   "lol": {
     "players": [

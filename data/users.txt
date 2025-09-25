@@ -102,5 +102,85 @@
     "password": "m290975m",
     "role": "votante",
     "createdAt": "2025-08-31T18:20:53.529Z"
+  },
+  {
+    "id": 1758764487026,
+    "username": "marx",
+    "email": "games.extremee0@gmail.com",
+    "password": "artur2109",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:41:27.026Z"
+  },
+  {
+    "id": 1758764491551,
+    "username": "nothG",
+    "email": "darkspace990@gmail.com",
+    "password": "brunosexo",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:41:31.551Z"
+  },
+  {
+    "id": 1758764499416,
+    "username": "joaorleao",
+    "email": "joaoraph@gmail.com",
+    "password": "raphael9090",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:41:39.416Z"
+  },
+  {
+    "id": 1758764559242,
+    "username": "DGDOMAL",
+    "email": "joaovictorcactus@gmail.com",
+    "password": "jva010507",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:42:39.242Z"
+  },
+  {
+    "id": 1758764573638,
+    "username": "joaozinho",
+    "email": "jmsanto@gmail.com",
+    "password": "7corujinha",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:42:53.638Z"
+  },
+  {
+    "id": 1758764577953,
+    "username": "OlimpioBarbosa",
+    "email": "Barros.gui2005@gmail.com",
+    "password": "Aries2703",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:42:57.953Z"
+  },
+  {
+    "id": 1758764579921,
+    "username": "bida1",
+    "email": "bida@hotmail.com",
+    "password": "bida12",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:42:59.921Z"
+  },
+  {
+    "id": 1758764637587,
+    "username": "aNTONIO",
+    "email": "antonio@antonio.com",
+    "password": "antonio123",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:43:57.587Z"
+  },
+  {
+    "id": 1758764648452,
+    "username": "anton",
+    "email": "guialvessilva@hotmail.com.br",
+    "password": "jgas1805",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:44:08.452Z"
+  },
+  {
+    "id": 1758764656896,
+    "username": "claui",
+    "email": "c@a.com",
+    "password": "8AfANcb5uEzk99Z",
+    "role": "votante",
+    "createdAt": "2025-09-25T01:44:16.896Z"
   }
 ]
