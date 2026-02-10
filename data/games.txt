@@ -8,168 +8,156 @@
         "votes": {}
       },
       {
-        "id": 1756217638458,
-        "name": "Trombeiro (Bida)",
-        "addedAt": "2025-08-26T14:13:58.458Z",
+        "id": 1770736764520,
+        "name": "JonhOPF",
+        "addedAt": "2026-02-10T15:19:24.520Z",
         "votes": {}
       },
       {
-        "id": 1756217643724,
-        "name": "Xota (Jota)",
-        "addedAt": "2025-08-26T14:14:03.724Z",
+        "id": 1770736767844,
+        "name": "Alexesm",
+        "addedAt": "2026-02-10T15:19:27.844Z",
         "votes": {}
       },
       {
-        "id": 1756217654063,
-        "name": "Drk Final Boss (Marx)",
-        "addedAt": "2025-08-26T14:14:14.063Z",
+        "id": 1770736772307,
+        "name": "TANGOSOO",
+        "addedAt": "2026-02-10T15:19:32.307Z",
         "votes": {}
       },
       {
-        "id": 1756217669535,
-        "name": "Clauderlan (Quer voltar com a Ex)",
-        "addedAt": "2025-08-26T14:14:29.535Z",
+        "id": 1770736792349,
+        "name": "Ex-obeso filho de uma puta fresco",
+        "addedAt": "2026-02-10T15:19:52.349Z",
         "votes": {}
       },
       {
-        "id": 1756217690651,
-        "name": "Mulherofobico (Bemmer)",
-        "addedAt": "2025-08-26T14:14:50.651Z",
+        "id": 1770736800744,
+        "name": "Trambiqueiro tchomps",
+        "addedAt": "2026-02-10T15:20:00.744Z",
         "votes": {}
       },
       {
-        "id": 1756217731605,
-        "name": "Agressor, o irmão da Preciosa (Rapha)",
-        "addedAt": "2025-08-26T14:15:31.605Z",
+        "id": 1770736813302,
+        "name": "Sifilis Jr Camdaf",
+        "addedAt": "2026-02-10T15:20:13.302Z",
         "votes": {}
       },
       {
-        "id": 1756217776062,
-        "name": "Viado Kpop (Autoexplicativo)",
-        "addedAt": "2025-08-26T14:16:16.062Z",
+        "id": 1770736835322,
+        "name": "Fraza Safada",
+        "addedAt": "2026-02-10T15:20:35.322Z",
         "votes": {}
       },
       {
-        "id": 1756217834738,
-        "name": "Blaze09 (Outro viado chamado Guilherme)",
-        "addedAt": "2025-08-26T14:17:14.738Z",
+        "id": 1770736859371,
+        "name": "Juzelians resenhado pelo Yoda",
+        "addedAt": "2026-02-10T15:20:59.371Z",
         "votes": {}
       },
       {
-        "id": 1758764352136,
-        "name": "DG DO MAL (FEI QUE DOI)",
-        "addedAt": "2025-09-25T01:39:12.136Z",
+        "id": 1770736928967,
+        "name": "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura",
+        "addedAt": "2026-02-10T15:22:08.967Z",
         "votes": {}
       }
     ],
     "votes": {
-      "mutucapingusso": {
-        "CNB Mutuca (Milton)": 10,
-        "Trombeiro (Bida)": 4,
-        "Xota (Jota)": 10,
-        "Drk Final Boss (Marx)": 10,
-        "Clauderlan (Quer voltar com a Ex)": 7,
-        "Mulherofobico (Bemmer)": 4,
-        "Agressor, o irmão da Preciosa (Rapha)": 7,
-        "Viado Kpop (Autoexplicativo)": 5,
-        "Blaze09 (Outro viado chamado Guilherme)": 9,
-        "DG DO MAL (FEI QUE DOI)": 7
-      },
-      "marx": {
+      "Tchomps": {
         "CNB Mutuca (Milton)": 5,
-        "Trombeiro (Bida)": 5,
-        "Xota (Jota)": 8,
-        "Drk Final Boss (Marx)": 10,
-        "Clauderlan (Quer voltar com a Ex)": 7,
-        "Mulherofobico (Bemmer)": 6,
-        "Agressor, o irmão da Preciosa (Rapha)": 8,
-        "Viado Kpop (Autoexplicativo)": 6,
-        "Blaze09 (Outro viado chamado Guilherme)": 7,
-        "DG DO MAL (FEI QUE DOI)": 7
+        "JonhOPF": 5,
+        "Alexesm": 5,
+        "TANGOSOO": 5,
+        "Ex-obeso filho de uma puta fresco": 5,
+        "Trambiqueiro tchomps": 5,
+        "Sifilis Jr Camdaf": 5,
+        "Fraza Safada": 5,
+        "Juzelians resenhado pelo Yoda": 5,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 5
       },
-      "joaorleao": {
-        "CNB Mutuca (Milton)": 6,
-        "Trombeiro (Bida)": 6,
-        "Xota (Jota)": 8,
-        "Drk Final Boss (Marx)": 9,
-        "Clauderlan (Quer voltar com a Ex)": 8,
-        "Mulherofobico (Bemmer)": 6,
-        "Agressor, o irmão da Preciosa (Rapha)": 8,
-        "Viado Kpop (Autoexplicativo)": 7,
-        "Blaze09 (Outro viado chamado Guilherme)": 8,
-        "DG DO MAL (FEI QUE DOI)": 7
-      },
-      "nothG": {
-        "CNB Mutuca (Milton)": 6,
-        "Trombeiro (Bida)": 3,
-        "Xota (Jota)": 7,
-        "Drk Final Boss (Marx)": 8,
-        "Clauderlan (Quer voltar com a Ex)": 4,
-        "Mulherofobico (Bemmer)": 6,
-        "Agressor, o irmão da Preciosa (Rapha)": 7,
-        "Viado Kpop (Autoexplicativo)": 5,
-        "Blaze09 (Outro viado chamado Guilherme)": 6,
-        "DG DO MAL (FEI QUE DOI)": 5
-      },
-      "bida1": {
+      "Jopf": {
         "CNB Mutuca (Milton)": 7,
-        "Trombeiro (Bida)": 5,
-        "Xota (Jota)": 8,
-        "Drk Final Boss (Marx)": 9,
-        "Clauderlan (Quer voltar com a Ex)": 8,
-        "Mulherofobico (Bemmer)": 7,
-        "Agressor, o irmão da Preciosa (Rapha)": 9,
-        "Viado Kpop (Autoexplicativo)": 7,
-        "Blaze09 (Outro viado chamado Guilherme)": 8,
-        "DG DO MAL (FEI QUE DOI)": 8
+        "JonhOPF": 2,
+        "Alexesm": 10,
+        "TANGOSOO": 8,
+        "Ex-obeso filho de uma puta fresco": 4,
+        "Trambiqueiro tchomps": 6,
+        "Sifilis Jr Camdaf": 6,
+        "Fraza Safada": 1,
+        "Juzelians resenhado pelo Yoda": 2,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 7
       },
-      "OlimpioBarbosa": {
+      "mutucapingusso": {
         "CNB Mutuca (Milton)": 6,
-        "Trombeiro (Bida)": 6,
-        "Xota (Jota)": 8,
-        "Drk Final Boss (Marx)": 9,
-        "Clauderlan (Quer voltar com a Ex)": 7,
-        "Mulherofobico (Bemmer)": 7,
-        "Agressor, o irmão da Preciosa (Rapha)": 9,
-        "Viado Kpop (Autoexplicativo)": 6,
-        "Blaze09 (Outro viado chamado Guilherme)": 8,
-        "DG DO MAL (FEI QUE DOI)": 7
+        "JonhOPF": 3,
+        "Alexesm": 10,
+        "TANGOSOO": 9,
+        "Ex-obeso filho de uma puta fresco": 3,
+        "Trambiqueiro tchomps": 8,
+        "Sifilis Jr Camdaf": 8,
+        "Fraza Safada": 1,
+        "Juzelians resenhado pelo Yoda": 4,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 7
       },
-      "joaozinho": {
-        "CNB Mutuca (Milton)": 7,
-        "Trombeiro (Bida)": 3,
-        "Xota (Jota)": 8,
-        "Drk Final Boss (Marx)": 10,
-        "Clauderlan (Quer voltar com a Ex)": 7,
-        "Mulherofobico (Bemmer)": 6,
-        "Agressor, o irmão da Preciosa (Rapha)": 9,
-        "Viado Kpop (Autoexplicativo)": 4,
-        "Blaze09 (Outro viado chamado Guilherme)": 7,
-        "DG DO MAL (FEI QUE DOI)": 8
+      "PegaNoMeuPauMutuca": {
+        "CNB Mutuca (Milton)": 6,
+        "JonhOPF": 8,
+        "Alexesm": 8,
+        "TANGOSOO": 9,
+        "Ex-obeso filho de uma puta fresco": 4,
+        "Trambiqueiro tchomps": 9,
+        "Sifilis Jr Camdaf": 6,
+        "Fraza Safada": 5,
+        "Juzelians resenhado pelo Yoda": 4,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 4
       },
-      "aNTONIO": {
+      "juzelians": {
+        "CNB Mutuca (Milton)": 3,
+        "JonhOPF": 2,
+        "Alexesm": 7,
+        "TANGOSOO": 6,
+        "Ex-obeso filho de uma puta fresco": 2,
+        "Trambiqueiro tchomps": 5,
+        "Sifilis Jr Camdaf": 4,
+        "Fraza Safada": 1,
+        "Juzelians resenhado pelo Yoda": 1,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 4
+      },
+      "Frazao": {
         "CNB Mutuca (Milton)": 8,
-        "Trombeiro (Bida)": 3,
-        "Xota (Jota)": 10,
-        "Drk Final Boss (Marx)": 7,
-        "Clauderlan (Quer voltar com a Ex)": 7,
-        "Mulherofobico (Bemmer)": 10,
-        "Agressor, o irmão da Preciosa (Rapha)": 7,
-        "Viado Kpop (Autoexplicativo)": 10,
-        "Blaze09 (Outro viado chamado Guilherme)": 7,
-        "DG DO MAL (FEI QUE DOI)": 7
+        "JonhOPF": 9,
+        "Alexesm": 10,
+        "TANGOSOO": 8,
+        "Ex-obeso filho de uma puta fresco": 7,
+        "Trambiqueiro tchomps": 10,
+        "Sifilis Jr Camdaf": 8,
+        "Fraza Safada": 3,
+        "Juzelians resenhado pelo Yoda": 6,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 7
       },
-      "anton": {
+      "alexesm": {
+        "CNB Mutuca (Milton)": 7,
+        "JonhOPF": 5,
+        "Alexesm": 9,
+        "TANGOSOO": 9,
+        "Ex-obeso filho de uma puta fresco": 6,
+        "Trambiqueiro tchomps": 10,
+        "Sifilis Jr Camdaf": 8,
+        "Fraza Safada": 1,
+        "Juzelians resenhado pelo Yoda": 3,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 9
+      },
+      "hugomolra": {
         "CNB Mutuca (Milton)": 6,
-        "Trombeiro (Bida)": 6,
-        "Xota (Jota)": 8,
-        "Drk Final Boss (Marx)": 9,
-        "Clauderlan (Quer voltar com a Ex)": 7,
-        "Mulherofobico (Bemmer)": 7,
-        "Agressor, o irmão da Preciosa (Rapha)": 8,
-        "Viado Kpop (Autoexplicativo)": 7,
-        "Blaze09 (Outro viado chamado Guilherme)": 8,
-        "DG DO MAL (FEI QUE DOI)": 7
+        "JonhOPF": 3,
+        "Alexesm": 9,
+        "TANGOSOO": 8,
+        "Ex-obeso filho de uma puta fresco": 4,
+        "Trambiqueiro tchomps": 9,
+        "Sifilis Jr Camdaf": 7,
+        "Fraza Safada": 2,
+        "Juzelians resenhado pelo Yoda": 2,
+        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 6
       }
     },
     "voting_active": false,
@@ -190,75 +178,47 @@
         "Corrode"
       ],
       "votes": {
-        "marx": [
-          "Corrode",
+        "Tchomps": [
+          "Split",
           "Ascent",
-          "Bind",
-          "Haven",
-          "Lotus"
-        ],
-        "nothG": [
-          "Icebox",
-          "Lotus",
-          "Pearl",
+          "Breeze",
           "Corrode",
-          "Haven"
-        ],
-        "joaorleao": [
-          "Sunset",
-          "Lotus",
-          "Fracture",
-          "Icebox",
-          "Bind"
-        ],
-        "bida1": [
-          "Split",
-          "Pearl",
-          "Icebox",
-          "Sunset",
-          "Corrode"
-        ],
-        "claui": [
-          "Icebox",
-          "Sunset",
-          "Corrode",
-          "Split",
-          "Lotus"
-        ],
-        "mutucapingusso": [
-          "Split",
-          "Pearl",
-          "Fracture",
-          "Haven",
           "Sunset"
         ],
-        "OlimpioBarbosa": [
-          "Corrode",
-          "Bind",
-          "Pearl",
-          "Lotus",
-          "Split"
-        ],
-        "DGDOMAL": [
-          "Bind",
-          "Pearl",
-          "Lotus",
-          "Split",
-          "Haven"
-        ],
-        "joaozinho": [
-          "Haven",
-          "Lotus",
-          "Pearl",
-          "Ascent",
-          "Abyss"
-        ],
-        "aNTONIO": [
-          "Icebox",
+        "Frazao": [
           "Breeze",
+          "Pearl",
           "Abyss",
-          "Fracture",
-          "Split"
+          "Split",
+          "Icebox"
+        ],
+        "juzelians": [
+          "Bind",
+          "Haven",
+          "Split",
+          "Ascent",
+          "Icebox"
+        ],
+        "hugomolra": [
+          "Bind",
+          "Haven",
+          "Split",
+          "Ascent",
+          "Icebox"
+        ],
+        "Penis123": [
+          "Haven",
+          "Split",
+          "Pearl",
+          "Lotus",
+          "Fracture"
+        ],
+        "Jopf": [
+          "Haven",
+          "Split",
+          "Ascent",
+          "Icebox",
+          "Pearl"
         ]
       },
       "votingActive": true,
@@ -295,27 +255,9 @@
         "votes": {}
       },
       {
-        "id": 1756662503454,
-        "name": "23dede",
-        "addedAt": "2025-08-31T17:48:23.454Z",
-        "votes": {}
-      },
-      {
-        "id": 1756662512042,
-        "name": "Paçoquitas",
-        "addedAt": "2025-08-31T17:48:32.042Z",
-        "votes": {}
-      },
-      {
         "id": 1756662517937,
         "name": "JonhOPF",
         "addedAt": "2025-08-31T17:48:37.937Z",
-        "votes": {}
-      },
-      {
-        "id": 1756663187612,
-        "name": "Bolas robustas",
-        "addedAt": "2025-08-31T17:59:47.612Z",
         "votes": {}
       },
       {
@@ -329,116 +271,110 @@
         "name": "TANGOSOO",
         "addedAt": "2025-09-06T17:08:12.310Z",
         "votes": {}
+      },
+      {
+        "id": 1770736711169,
+        "name": "Fraza Safada",
+        "addedAt": "2026-02-10T15:18:31.169Z",
+        "votes": {}
+      },
+      {
+        "id": 1770736718690,
+        "name": "Trambiqueiro Tchomps",
+        "addedAt": "2026-02-10T15:18:38.690Z",
+        "votes": {}
+      },
+      {
+        "id": 1770736729435,
+        "name": "Sifilis Jr Camdaf",
+        "addedAt": "2026-02-10T15:18:49.435Z",
+        "votes": {}
       }
     ],
     "votes": {
-      "juzelians": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 5,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "23dede": 8,
-        "Paçoquitas": 4,
-        "JonhOPF": 9,
-        "Bolas robustas": 8,
-        "juzelians": 6,
-        "TANGOSOO": 5
-      },
-      "pimba": {
-        "CNB Mutuca (Milton)": 9,
-        "N3TU62": 4,
-        "Hugomoura": 7,
-        "Alexesm": 9,
-        "23dede": 9,
-        "Paçoquitas": 6,
-        "JonhOPF": 10,
-        "Bolas robustas": 8,
-        "juzelians": 7,
-        "TANGOSOO": 7
-      },
       "mutucapingusso": {
-        "CNB Mutuca (Milton)": 10,
-        "N3TU62": 1,
-        "Hugomoura": 4,
-        "Alexesm": 6,
-        "23dede": 6,
-        "Paçoquitas": 3,
-        "JonhOPF": 8,
-        "Bolas robustas": 6,
-        "juzelians": 6,
-        "TANGOSOO": 4
-      },
-      "n3tu62": {
-        "CNB Mutuca (Milton)": 9,
-        "N3TU62": 1,
-        "Hugomoura": 5,
-        "Alexesm": 8,
-        "23dede": 8,
-        "Paçoquitas": 6,
-        "JonhOPF": 10,
-        "Bolas robustas": 8,
-        "juzelians": 6,
-        "TANGOSOO": 6
-      },
-      "hugomoura": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 5,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "23dede": 8,
-        "Paçoquitas": 4,
-        "JonhOPF": 10,
-        "Bolas robustas": 7,
-        "juzelians": 6,
-        "TANGOSOO": 6
-      },
-      "23dede": {
         "CNB Mutuca (Milton)": 9,
         "N3TU62": 4,
         "Hugomoura": 6,
         "Alexesm": 8,
-        "23dede": 7,
-        "Paçoquitas": 5,
         "JonhOPF": 10,
-        "Bolas robustas": 7,
+        "juzelians": 7,
+        "TANGOSOO": 6,
+        "Fraza Safada": 1,
+        "Trambiqueiro Tchomps": 1,
+        "Sifilis Jr Camdaf": 8
+      },
+      "Jopf": {
+        "CNB Mutuca (Milton)": 8,
+        "N3TU62": 4,
+        "Hugomoura": 6,
+        "Alexesm": 9,
+        "JonhOPF": 8,
+        "juzelians": 5,
+        "TANGOSOO": 6,
+        "Fraza Safada": 1,
+        "Trambiqueiro Tchomps": 1,
+        "Sifilis Jr Camdaf": 8
+      },
+      "juzelians": {
+        "CNB Mutuca (Milton)": 6,
+        "N3TU62": 4,
+        "Hugomoura": 6,
+        "Alexesm": 8,
+        "JonhOPF": 10,
         "juzelians": 6,
-        "TANGOSOO": 7
+        "TANGOSOO": 5,
+        "Fraza Safada": 1,
+        "Trambiqueiro Tchomps": 1,
+        "Sifilis Jr Camdaf": 9
       },
       "alexesm": {
         "CNB Mutuca (Milton)": 8,
-        "N3TU62": 5,
+        "N3TU62": 6,
+        "Hugomoura": 8,
+        "Alexesm": 8,
+        "JonhOPF": 10,
+        "juzelians": 8,
+        "TANGOSOO": 7,
+        "Fraza Safada": 1,
+        "Trambiqueiro Tchomps": 2,
+        "Sifilis Jr Camdaf": 10
+      },
+      "Frazao": {
+        "CNB Mutuca (Milton)": 10,
+        "N3TU62": 6,
+        "Hugomoura": 8,
+        "Alexesm": 10,
+        "JonhOPF": 8,
+        "juzelians": 8,
+        "TANGOSOO": 9,
+        "Fraza Safada": 4,
+        "Trambiqueiro Tchomps": 6,
+        "Sifilis Jr Camdaf": 10
+      },
+      "Penis123": {
+        "CNB Mutuca (Milton)": 10,
+        "N3TU62": 1,
         "Hugomoura": 6,
-        "Alexesm": 7,
-        "23dede": 8,
-        "Paçoquitas": 5,
-        "JonhOPF": 10,
-        "Bolas robustas": 6,
-        "juzelians": 6,
-        "TANGOSOO": 6
-      },
-      "Jopf": {
-        "CNB Mutuca (Milton)": 9,
-        "N3TU62": 4,
-        "Hugomoura": 7,
         "Alexesm": 9,
-        "23dede": 9,
-        "Paçoquitas": 5,
         "JonhOPF": 10,
-        "Bolas robustas": 7,
         "juzelians": 6,
-        "TANGOSOO": 7
+        "TANGOSOO": 6,
+        "Fraza Safada": 1,
+        "Trambiqueiro Tchomps": 1,
+        "Sifilis Jr Camdaf": 10
       },
-      "mateusmacedo": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 2,
-        "Hugomoura": 5,
-        "Alexesm": 9,
-        "23dede": 9,
-        "Paçoquitas": 5,
-        "JonhOPF": 9,
-        "Bolas robustas": 5,
-        "juzelians": 6,
-        "TANGOSOO": 6
+      "player1": {
+        "CNB Mutuca (Milton)": 10,
+        "N3TU62": 1,
+        "Hugomoura": 6,
+        "Alexesm": 8,
+        "JonhOPF": 10,
+        "juzelians": 4,
+        "TANGOSOO": 6,
+        "Fraza Safada": 1,
+        "Trambiqueiro Tchomps": 1,
+        "Sifilis Jr Camdaf": 9
       }
     },
     "voting_active": false,
