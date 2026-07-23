@@ -2,162 +2,162 @@
   "valorant": {
     "players": [
       {
-        "id": 1756217627271,
-        "name": "CNB Mutuca (Milton)",
-        "addedAt": "2025-08-26T14:13:47.271Z",
+        "id": 1784847030450,
+        "name": "CNB Mutuca",
+        "addedAt": "2026-07-23T22:50:30.450Z",
         "votes": {}
       },
       {
-        "id": 1770736764520,
-        "name": "JonhOPF",
-        "addedAt": "2026-02-10T15:19:24.520Z",
+        "id": 1784847044573,
+        "name": "Marx amigo do Thor",
+        "addedAt": "2026-07-23T22:50:44.573Z",
         "votes": {}
       },
       {
-        "id": 1770736767844,
-        "name": "Alexesm",
-        "addedAt": "2026-02-10T15:19:27.844Z",
+        "id": 1784847052582,
+        "name": "Mago Irmão do Thor",
+        "addedAt": "2026-07-23T22:50:52.582Z",
         "votes": {}
       },
       {
-        "id": 1770736772307,
-        "name": "TANGOSOO",
-        "addedAt": "2026-02-10T15:19:32.307Z",
+        "id": 1784847061332,
+        "name": "Gai Disciplo do Thor",
+        "addedAt": "2026-07-23T22:51:01.332Z",
         "votes": {}
       },
       {
-        "id": 1770736792349,
-        "name": "Ex-obeso filho de uma puta fresco",
-        "addedAt": "2026-02-10T15:19:52.349Z",
+        "id": 1784847071620,
+        "name": "Claw Thor Negro",
+        "addedAt": "2026-07-23T22:51:11.620Z",
         "votes": {}
       },
       {
-        "id": 1770736800744,
-        "name": "Trambiqueiro tchomps",
-        "addedAt": "2026-02-10T15:20:00.744Z",
+        "id": 1784847082379,
+        "name": "SulBR no Thor ref",
+        "addedAt": "2026-07-23T22:51:22.379Z",
         "votes": {}
       },
       {
-        "id": 1770736813302,
-        "name": "Sifilis Jr Camdaf",
-        "addedAt": "2026-02-10T15:20:13.302Z",
+        "id": 1784847095311,
+        "name": "Jota Thor Dorminhoco",
+        "addedAt": "2026-07-23T22:51:35.311Z",
         "votes": {}
       },
       {
-        "id": 1770736835322,
-        "name": "Fraza Safada",
-        "addedAt": "2026-02-10T15:20:35.322Z",
+        "id": 1784847116447,
+        "name": "Anton Inimigo do Thor",
+        "addedAt": "2026-07-23T22:51:56.447Z",
         "votes": {}
       },
       {
-        "id": 1770736859371,
-        "name": "Juzelians resenhado pelo Yoda",
-        "addedAt": "2026-02-10T15:20:59.371Z",
+        "id": 1784847138664,
+        "name": "Marcelo Bida Thor No Prime",
+        "addedAt": "2026-07-23T22:52:18.664Z",
         "votes": {}
       },
       {
-        "id": 1770736928967,
-        "name": "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura",
-        "addedAt": "2026-02-10T15:22:08.967Z",
+        "id": 1784847144434,
+        "name": "Gabe Hitler",
+        "addedAt": "2026-07-23T22:52:24.434Z",
         "votes": {}
       }
     ],
     "votes": {
-      "Tchomps": {
-        "CNB Mutuca (Milton)": 5,
-        "JonhOPF": 5,
-        "Alexesm": 5,
-        "TANGOSOO": 5,
-        "Ex-obeso filho de uma puta fresco": 5,
-        "Trambiqueiro tchomps": 5,
-        "Sifilis Jr Camdaf": 5,
-        "Fraza Safada": 5,
-        "Juzelians resenhado pelo Yoda": 5,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 5
+      "marx": {
+        "CNB Mutuca": 5,
+        "Marx amigo do Thor": 10,
+        "Mago Irmão do Thor": 7,
+        "Gai Disciplo do Thor": 6,
+        "Claw Thor Negro": 5,
+        "SulBR no Thor ref": 5,
+        "Jota Thor Dorminhoco": 7,
+        "Anton Inimigo do Thor": 5,
+        "Marcelo Bida Thor No Prime": 5,
+        "Gabe Hitler": 5
       },
-      "Jopf": {
-        "CNB Mutuca (Milton)": 7,
-        "JonhOPF": 2,
-        "Alexesm": 10,
-        "TANGOSOO": 8,
-        "Ex-obeso filho de uma puta fresco": 4,
-        "Trambiqueiro tchomps": 6,
-        "Sifilis Jr Camdaf": 6,
-        "Fraza Safada": 1,
-        "Juzelians resenhado pelo Yoda": 2,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 7
+      "player1": {
+        "CNB Mutuca": 7,
+        "Marx amigo do Thor": 10,
+        "Mago Irmão do Thor": 8,
+        "Gai Disciplo do Thor": 8,
+        "Claw Thor Negro": 5,
+        "SulBR no Thor ref": 8,
+        "Jota Thor Dorminhoco": 9,
+        "Anton Inimigo do Thor": 7,
+        "Marcelo Bida Thor No Prime": 6,
+        "Gabe Hitler": 8
       },
-      "mutucapingusso": {
-        "CNB Mutuca (Milton)": 6,
-        "JonhOPF": 3,
-        "Alexesm": 10,
-        "TANGOSOO": 9,
-        "Ex-obeso filho de uma puta fresco": 3,
-        "Trambiqueiro tchomps": 8,
-        "Sifilis Jr Camdaf": 8,
-        "Fraza Safada": 1,
-        "Juzelians resenhado pelo Yoda": 4,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 7
+      "anton": {
+        "CNB Mutuca": 6,
+        "Marx amigo do Thor": 8,
+        "Mago Irmão do Thor": 8,
+        "Gai Disciplo do Thor": 7,
+        "Claw Thor Negro": 7,
+        "SulBR no Thor ref": 7,
+        "Jota Thor Dorminhoco": 8,
+        "Anton Inimigo do Thor": 5,
+        "Marcelo Bida Thor No Prime": 5,
+        "Gabe Hitler": 6
       },
-      "PegaNoMeuPauMutuca": {
-        "CNB Mutuca (Milton)": 6,
-        "JonhOPF": 8,
-        "Alexesm": 8,
-        "TANGOSOO": 9,
-        "Ex-obeso filho de uma puta fresco": 4,
-        "Trambiqueiro tchomps": 9,
-        "Sifilis Jr Camdaf": 6,
-        "Fraza Safada": 5,
-        "Juzelians resenhado pelo Yoda": 4,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 4
+      "Penis123": {
+        "CNB Mutuca": 8,
+        "Marx amigo do Thor": 10,
+        "Mago Irmão do Thor": 8,
+        "Gai Disciplo do Thor": 8,
+        "Claw Thor Negro": 6,
+        "SulBR no Thor ref": 9,
+        "Jota Thor Dorminhoco": 9,
+        "Anton Inimigo do Thor": 7,
+        "Marcelo Bida Thor No Prime": 6,
+        "Gabe Hitler": 10
       },
-      "juzelians": {
-        "CNB Mutuca (Milton)": 3,
-        "JonhOPF": 2,
-        "Alexesm": 7,
-        "TANGOSOO": 6,
-        "Ex-obeso filho de uma puta fresco": 2,
-        "Trambiqueiro tchomps": 5,
-        "Sifilis Jr Camdaf": 4,
-        "Fraza Safada": 1,
-        "Juzelians resenhado pelo Yoda": 1,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 4
+      "rapha": {
+        "CNB Mutuca": 7,
+        "Marx amigo do Thor": 9,
+        "Mago Irmão do Thor": 7,
+        "Gai Disciplo do Thor": 7,
+        "Claw Thor Negro": 7,
+        "SulBR no Thor ref": 7,
+        "Jota Thor Dorminhoco": 8,
+        "Anton Inimigo do Thor": 7,
+        "Marcelo Bida Thor No Prime": 6,
+        "Gabe Hitler": 6
       },
-      "Frazao": {
-        "CNB Mutuca (Milton)": 8,
-        "JonhOPF": 9,
-        "Alexesm": 10,
-        "TANGOSOO": 8,
-        "Ex-obeso filho de uma puta fresco": 7,
-        "Trambiqueiro tchomps": 10,
-        "Sifilis Jr Camdaf": 8,
-        "Fraza Safada": 3,
-        "Juzelians resenhado pelo Yoda": 6,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 7
+      "Guigoperador": {
+        "CNB Mutuca": 6,
+        "Marx amigo do Thor": 9,
+        "Mago Irmão do Thor": 8,
+        "Gai Disciplo do Thor": 7,
+        "Claw Thor Negro": 7,
+        "SulBR no Thor ref": 8,
+        "Jota Thor Dorminhoco": 8,
+        "Anton Inimigo do Thor": 6,
+        "Marcelo Bida Thor No Prime": 6,
+        "Gabe Hitler": 7
       },
-      "alexesm": {
-        "CNB Mutuca (Milton)": 7,
-        "JonhOPF": 5,
-        "Alexesm": 9,
-        "TANGOSOO": 9,
-        "Ex-obeso filho de uma puta fresco": 6,
-        "Trambiqueiro tchomps": 10,
-        "Sifilis Jr Camdaf": 8,
-        "Fraza Safada": 1,
-        "Juzelians resenhado pelo Yoda": 3,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 9
+      "Claudio": {
+        "CNB Mutuca": 7,
+        "Marx amigo do Thor": 10,
+        "Mago Irmão do Thor": 8,
+        "Gai Disciplo do Thor": 7,
+        "Claw Thor Negro": 7,
+        "SulBR no Thor ref": 8,
+        "Jota Thor Dorminhoco": 9,
+        "Anton Inimigo do Thor": 8,
+        "Marcelo Bida Thor No Prime": 6,
+        "Gabe Hitler": 7
       },
-      "hugomolra": {
-        "CNB Mutuca (Milton)": 6,
-        "JonhOPF": 3,
-        "Alexesm": 9,
-        "TANGOSOO": 8,
-        "Ex-obeso filho de uma puta fresco": 4,
-        "Trambiqueiro tchomps": 9,
-        "Sifilis Jr Camdaf": 7,
-        "Fraza Safada": 2,
-        "Juzelians resenhado pelo Yoda": 2,
-        "Irmão do Pirocudo. Puta que pariu que caba do pauzão o irmão desse ser. Eu fico maluco, transtornado quando vejo ele nú. Absurdo. Esse merda é o membro irrelevante da familia do Pedro Moura": 6
+      "JoaoNiga": {
+        "CNB Mutuca": 6,
+        "Marx amigo do Thor": 10,
+        "Mago Irmão do Thor": 8,
+        "Gai Disciplo do Thor": 7,
+        "Claw Thor Negro": 7,
+        "SulBR no Thor ref": 8,
+        "Jota Thor Dorminhoco": 8,
+        "Anton Inimigo do Thor": 7,
+        "Marcelo Bida Thor No Prime": 5,
+        "Gabe Hitler": 5
       }
     },
     "voting_active": false,
@@ -178,47 +178,54 @@
         "Corrode"
       ],
       "votes": {
-        "Tchomps": [
-          "Split",
-          "Ascent",
-          "Breeze",
-          "Corrode",
-          "Sunset"
-        ],
-        "Frazao": [
-          "Breeze",
+        "player1": [
           "Pearl",
-          "Abyss",
+          "Fracture",
           "Split",
-          "Icebox"
-        ],
-        "juzelians": [
-          "Bind",
           "Haven",
-          "Split",
-          "Ascent",
-          "Icebox"
+          "Lotus"
         ],
-        "hugomolra": [
+        "Guigoperador": [
+          "Pearl",
+          "Lotus",
+          "Corrode",
           "Bind",
-          "Haven",
-          "Split",
+          "Ascent"
+        ],
+        "marx": [
+          "Fracture",
+          "Breeze",
           "Ascent",
-          "Icebox"
+          "Sunset",
+          "Pearl"
         ],
         "Penis123": [
           "Haven",
+          "Fracture",
           "Split",
           "Pearl",
-          "Lotus",
-          "Fracture"
+          "Ascent"
         ],
-        "Jopf": [
+        "anton": [
+          "Haven",
+          "Ascent",
+          "Pearl",
+          "Lotus",
+          "Icebox"
+        ],
+        "euclidesfaminto": [
           "Haven",
           "Split",
+          "Fracture",
+          "Pearl",
+          "Sunset"
+        ],
+        "JoaoNiga": [
+          "Bind",
           "Ascent",
-          "Icebox",
-          "Pearl"
+          "Split",
+          "Fracture",
+          "Sunset"
         ]
       },
       "votingActive": true,
@@ -231,150 +238,162 @@
   "lol": {
     "players": [
       {
-        "id": 1756217845342,
-        "name": "CNB Mutuca (Milton)",
-        "addedAt": "2025-08-26T14:17:25.342Z",
+        "id": 1784847153816,
+        "name": "CNB Mutuca",
+        "addedAt": "2026-07-23T22:52:33.816Z",
         "votes": {}
       },
       {
-        "id": 1756662494791,
-        "name": "N3TU62",
-        "addedAt": "2025-08-31T17:48:14.791Z",
+        "id": 1784847157486,
+        "name": "Mago",
+        "addedAt": "2026-07-23T22:52:37.486Z",
         "votes": {}
       },
       {
-        "id": 1756662498252,
-        "name": "Hugomoura",
-        "addedAt": "2025-08-31T17:48:18.252Z",
+        "id": 1784847159925,
+        "name": "Marx",
+        "addedAt": "2026-07-23T22:52:39.925Z",
         "votes": {}
       },
       {
-        "id": 1756662501008,
-        "name": "Alexesm",
-        "addedAt": "2025-08-31T17:48:21.008Z",
+        "id": 1784847162708,
+        "name": "Jota",
+        "addedAt": "2026-07-23T22:52:42.708Z",
         "votes": {}
       },
       {
-        "id": 1756662517937,
-        "name": "JonhOPF",
-        "addedAt": "2025-08-31T17:48:37.937Z",
+        "id": 1784847166895,
+        "name": "SulBR",
+        "addedAt": "2026-07-23T22:52:46.895Z",
         "votes": {}
       },
       {
-        "id": 1757178486097,
-        "name": "juzelians",
-        "addedAt": "2025-09-06T17:08:06.097Z",
+        "id": 1784847171523,
+        "name": "Olímpio",
+        "addedAt": "2026-07-23T22:52:51.523Z",
         "votes": {}
       },
       {
-        "id": 1757178492310,
-        "name": "TANGOSOO",
-        "addedAt": "2025-09-06T17:08:12.310Z",
+        "id": 1784847182687,
+        "name": "Clauderlan Batista",
+        "addedAt": "2026-07-23T22:53:02.687Z",
         "votes": {}
       },
       {
-        "id": 1770736711169,
-        "name": "Fraza Safada",
-        "addedAt": "2026-02-10T15:18:31.169Z",
+        "id": 1784847187697,
+        "name": "Anton",
+        "addedAt": "2026-07-23T22:53:07.697Z",
         "votes": {}
       },
       {
-        "id": 1770736718690,
-        "name": "Trambiqueiro Tchomps",
-        "addedAt": "2026-02-10T15:18:38.690Z",
+        "id": 1784847192196,
+        "name": "Gabe",
+        "addedAt": "2026-07-23T22:53:12.196Z",
         "votes": {}
       },
       {
-        "id": 1770736729435,
-        "name": "Sifilis Jr Camdaf",
-        "addedAt": "2026-02-10T15:18:49.435Z",
+        "id": 1784847200786,
+        "name": "Bida",
+        "addedAt": "2026-07-23T22:53:20.786Z",
         "votes": {}
       }
     ],
     "votes": {
-      "mutucapingusso": {
-        "CNB Mutuca (Milton)": 9,
-        "N3TU62": 4,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "JonhOPF": 10,
-        "juzelians": 7,
-        "TANGOSOO": 6,
-        "Fraza Safada": 1,
-        "Trambiqueiro Tchomps": 1,
-        "Sifilis Jr Camdaf": 8
+      "player1": {
+        "CNB Mutuca": 9,
+        "Mago": 6,
+        "Marx": 8,
+        "Jota": 10,
+        "SulBR": 10,
+        "Olímpio": 7,
+        "Clauderlan Batista": 1,
+        "Anton": 7,
+        "Gabe": 6,
+        "Bida": 4
       },
-      "Jopf": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 4,
-        "Hugomoura": 6,
-        "Alexesm": 9,
-        "JonhOPF": 8,
-        "juzelians": 5,
-        "TANGOSOO": 6,
-        "Fraza Safada": 1,
-        "Trambiqueiro Tchomps": 1,
-        "Sifilis Jr Camdaf": 8
-      },
-      "juzelians": {
-        "CNB Mutuca (Milton)": 6,
-        "N3TU62": 4,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "JonhOPF": 10,
-        "juzelians": 6,
-        "TANGOSOO": 5,
-        "Fraza Safada": 1,
-        "Trambiqueiro Tchomps": 1,
-        "Sifilis Jr Camdaf": 9
-      },
-      "alexesm": {
-        "CNB Mutuca (Milton)": 8,
-        "N3TU62": 6,
-        "Hugomoura": 8,
-        "Alexesm": 8,
-        "JonhOPF": 10,
-        "juzelians": 8,
-        "TANGOSOO": 7,
-        "Fraza Safada": 1,
-        "Trambiqueiro Tchomps": 2,
-        "Sifilis Jr Camdaf": 10
-      },
-      "Frazao": {
-        "CNB Mutuca (Milton)": 10,
-        "N3TU62": 6,
-        "Hugomoura": 8,
-        "Alexesm": 10,
-        "JonhOPF": 8,
-        "juzelians": 8,
-        "TANGOSOO": 9,
-        "Fraza Safada": 4,
-        "Trambiqueiro Tchomps": 6,
-        "Sifilis Jr Camdaf": 10
+      "marx": {
+        "CNB Mutuca": 7,
+        "Mago": 4,
+        "Marx": 7,
+        "Jota": 8,
+        "SulBR": 7,
+        "Olímpio": 6,
+        "Clauderlan Batista": 1,
+        "Anton": 6,
+        "Gabe": 4,
+        "Bida": 4
       },
       "Penis123": {
-        "CNB Mutuca (Milton)": 10,
-        "N3TU62": 1,
-        "Hugomoura": 6,
-        "Alexesm": 9,
-        "JonhOPF": 10,
-        "juzelians": 6,
-        "TANGOSOO": 6,
-        "Fraza Safada": 1,
-        "Trambiqueiro Tchomps": 1,
-        "Sifilis Jr Camdaf": 10
+        "CNB Mutuca": 10,
+        "Mago": 5,
+        "Marx": 8,
+        "Jota": 9,
+        "SulBR": 10,
+        "Olímpio": 6,
+        "Clauderlan Batista": 1,
+        "Anton": 7,
+        "Gabe": 6,
+        "Bida": 4
       },
-      "player1": {
-        "CNB Mutuca (Milton)": 10,
-        "N3TU62": 1,
-        "Hugomoura": 6,
-        "Alexesm": 8,
-        "JonhOPF": 10,
-        "juzelians": 4,
-        "TANGOSOO": 6,
-        "Fraza Safada": 1,
-        "Trambiqueiro Tchomps": 1,
-        "Sifilis Jr Camdaf": 9
+      "rapha": {
+        "CNB Mutuca": 10,
+        "Mago": 6,
+        "Marx": 9,
+        "Jota": 9,
+        "SulBR": 7,
+        "Olímpio": 8,
+        "Clauderlan Batista": 3,
+        "Anton": 7,
+        "Gabe": 7,
+        "Bida": 6
+      },
+      "Guigoperador": {
+        "CNB Mutuca": 8,
+        "Mago": 6,
+        "Marx": 8,
+        "Jota": 8,
+        "SulBR": 8,
+        "Olímpio": 8,
+        "Clauderlan Batista": 1,
+        "Anton": 7,
+        "Gabe": 7,
+        "Bida": 6
+      },
+      "euclidesfaminto": {
+        "CNB Mutuca": 10,
+        "Mago": 7,
+        "Marx": 9,
+        "Jota": 10,
+        "SulBR": 10,
+        "Olímpio": 9,
+        "Clauderlan Batista": 1,
+        "Anton": 9,
+        "Gabe": 8,
+        "Bida": 6
+      },
+      "Claudio": {
+        "CNB Mutuca": 10,
+        "Mago": 8,
+        "Marx": 10,
+        "Jota": 8,
+        "SulBR": 7,
+        "Olímpio": 7,
+        "Clauderlan Batista": 1,
+        "Anton": 9,
+        "Gabe": 8,
+        "Bida": 7
+      },
+      "JoaoNiga": {
+        "CNB Mutuca": 9,
+        "Marx amigo do Thor": 8,
+        "Mago Irmão do Thor": 5,
+        "Gai Disciplo do Thor": 6,
+        "Claw Thor Negro": 1,
+        "SulBR no Thor ref": 8,
+        "Jota Thor Dorminhoco": 9,
+        "Anton Inimigo do Thor": 8,
+        "Marcelo Bida Thor No Prime": 5,
+        "Gabe Hitler": 5
       }
     },
     "voting_active": false,
