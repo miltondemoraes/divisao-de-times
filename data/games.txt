@@ -385,15 +385,15 @@
       },
       "JoaoNiga": {
         "CNB Mutuca": 9,
-        "Marx amigo do Thor": 8,
-        "Mago Irmão do Thor": 5,
-        "Gai Disciplo do Thor": 6,
-        "Claw Thor Negro": 1,
-        "SulBR no Thor ref": 8,
-        "Jota Thor Dorminhoco": 9,
-        "Anton Inimigo do Thor": 8,
-        "Marcelo Bida Thor No Prime": 5,
-        "Gabe Hitler": 5
+        "Mago": 5,
+        "Marx": 8,
+        "Jota": 9,
+        "SulBR": 8,
+        "Olímpio": 6,
+        "Clauderlan Batista": 1,
+        "Anton": 8,
+        "Gabe": 5,
+        "Bida": 5
       }
     },
     "voting_active": false,
