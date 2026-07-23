@@ -182,5 +182,53 @@
     "password": "8AfANcb5uEzk99Z",
     "role": "votante",
     "createdAt": "2025-09-25T01:44:16.896Z"
+  },
+  {
+    "id": 1784847324149,
+    "username": "Guigoperador",
+    "email": "batataassada@hotmail.com",
+    "password": "generalwafle",
+    "role": "votante",
+    "createdAt": "2026-07-23T22:55:24.149Z"
+  },
+  {
+    "id": 1784847595983,
+    "username": "rapha",
+    "email": "raphaleaog@gmail.com",
+    "password": "123456",
+    "role": "votante",
+    "createdAt": "2026-07-23T22:59:55.983Z"
+  },
+  {
+    "id": 1784847813596,
+    "username": "Guigo",
+    "email": "g@gmail.com",
+    "password": "guigo123",
+    "role": "votante",
+    "createdAt": "2026-07-23T23:03:33.596Z"
+  },
+  {
+    "id": 1784847864833,
+    "username": "guigo",
+    "email": "g1@gmail.com",
+    "password": "guigo123",
+    "role": "votante",
+    "createdAt": "2026-07-23T23:04:24.833Z"
+  },
+  {
+    "id": 1784848147179,
+    "username": "Claudio",
+    "email": "c@gmail.com",
+    "password": "123456",
+    "role": "votante",
+    "createdAt": "2026-07-23T23:09:07.179Z"
+  },
+  {
+    "id": 1784848224511,
+    "username": "JoaoNiga",
+    "email": "jmsantoslima84@gmail.com",
+    "password": "123456",
+    "role": "votante",
+    "createdAt": "2026-07-23T23:10:24.511Z"
   }
 ]
